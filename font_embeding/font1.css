@@ -1,0 +1,7 @@
+@font-face {
+  font-family: DeLarge;
+  src: url(../font_embeding/fonts/DeLarge.woff);
+}
+p.Font1{
+	font-family: DeLarge;
+}

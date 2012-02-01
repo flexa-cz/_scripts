@@ -1,0 +1,35 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script src="banner_rotator.js" type="text/javascript"></script>
+  </head>
+  <body>
+		<script type="text/javascript">
+			var width=970;
+			var height=210;
+
+			var banner1 = new Array();
+			banner1['addr']='./flash/970x210_triphala.swf';
+			banner1['link']='http://www.spektrumzdravi.cz/produkty/triphala-kura/?utm_source=spektrum_weby&utm_medium=top_banner_970x210&utm_campaign=triphala';
+
+			var banner2 = new Array();
+			banner2['addr']='./flash/970x210_aloe.swf';
+			banner2['link']='http://www.spektrumzdravi.cz/produkty/aloe-vera-boruvka-1l/?utm_source=spektrum_weby&utm_medium=top_banner_970x210&utm_campaign=aloe';
+
+			var banner3 = new Array();
+			banner3['addr']='./flash/970x210_produkty2.swf';
+			banner3['link']='http://www.spektrumzdravi.cz/category/produkty/?utm_source=spektrum_weby&utm_medium=top_banner_970x210&utm_campaign=produkty';
+
+			var banners = new Array(banner1,banner2,banner3);
+
+			banner_rotator(banners,width,height);
+		</script>
+		<div>TODO write content</div>
+  </body>
+</html>
