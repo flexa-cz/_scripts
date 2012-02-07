@@ -89,7 +89,8 @@ class site{
 	 * @return string
 	 */
 	final private function footer(){
-		$r=_N.'</body>';
+		$r=debuger::get_panel();
+		$r.=_N.'</body>';
 		$r.=_N.'</html>';
 		return $r;
 	}

@@ -11,6 +11,12 @@
 $root=str_replace(array('\\','core/include.php'),array('/',false),__FILE__);
 define('_ROOT',$root);
 
+// debugovaci skript
+// cim driv se vlozi tim driv zacne pocitat dobu behu aplikace
+require_once(_ROOT.'/core/debuger.class.php');
+debuger::set_localhost(true);
+debuger::set_ui('inline');
+
 // vlozi nezbytne soubory
 require_once(_ROOT.'/core/constants.php');
 require_once(_ROOT.'/core/report.class.php');
