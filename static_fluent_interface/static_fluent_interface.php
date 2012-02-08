@@ -1,8 +1,8 @@
 <?php
 /**
- * test odesilani emailu z localhostu
+ * jde nejak poslepovat fluent interface ze staticke tridy?
  *
- * @since 28.11.11 9:46
+ * @since 07.02.12 10:30
  * @author Vlahovic
  */
 
