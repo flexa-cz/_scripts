@@ -21,4 +21,6 @@ debuger::set_ui('inline');
 require_once(_ROOT.'/core/constants.php');
 require_once(_ROOT.'/core/report.class.php');
 require_once(_ROOT.'/core/site.class.php');
+require_once(_ROOT.'/core/db.class.php');
+require_once(_ROOT.'/core/table.class.php');
 ?>
