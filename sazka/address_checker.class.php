@@ -4,7 +4,7 @@
  */
 class address_checker{
 	private $source_address='http://www.sportka-aktualni-vysledky.net/prehledy/podle-data?pageno=';
-	private $max_loops=10;
+	private $max_loops=5;
 	private $domain_info=array();
 
 	public final function check(){
@@ -18,16 +18,16 @@ class address_checker{
 					die("Couldn't initialize a cURL handle");
 			}
 			// set some cURL options
-			$ret = curl_setopt($ch, CURLOPT_URL,            $addr);
-			$ret = curl_setopt($ch, CURLOPT_HEADER,         0);
-			$ret = curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-			$ret = curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			$ret = curl_setopt($ch, CURLOPT_TIMEOUT,        60);
+			curl_setopt($ch, CURLOPT_URL,            $addr);
+			curl_setopt($ch, CURLOPT_HEADER,         0);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+			curl_setopt($ch, CURLOPT_TIMEOUT,        60);
 
 			// execute
-			$ret = curl_exec($ch);
+			$html = curl_exec($ch);
 
-			if (empty($ret)) {
+			if (empty($html)) {
 					break;
 			} else {
 					$info = curl_getinfo($ch);
@@ -48,10 +48,12 @@ class address_checker{
 						$this->domain_info['response']=$http_codes[$info['http_code']];
 					}
 
+					// zpracovani html
+					
 			}
 			curl_close($ch); // close cURL handler
 
-			var_dump($this->domain_info);
+//			var_dump($this->domain_info);
 		}
 	}
 }

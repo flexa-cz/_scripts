@@ -7,7 +7,7 @@ class Db{
 	private $mysql_password=false;
 	private $mysql_database=false;
 	private $mysql_connect=null;
-	private $res=null;
+	private $result=null;
 	private $rows=null;
 
 	public function __construct()
@@ -83,16 +83,20 @@ class Db{
 	 * @param string $query
 	 */
 	public final function query($query){
-		$this->res=@mysql_query($query,$this->mysql_connect);
-		debuger::breakpoint($this->res ? $query : mysql_error($this->mysql_connect));
+		$this->result=@mysql_query($query,$this->mysql_connect);
+		debuger::breakpoint($this->result ? $query : mysql_error($this->mysql_connect)._N._N.$query);
 		return $this;
+	}
+
+	public final function getResult(){
+		return $this->result;
 	}
 
 
 	public final function get_rows(){
 		$this->rows=array();
-		if($this->res){
-			while($data=mysql_fetch_assoc($this->res)){
+		if($this->result){
+			while($data=mysql_fetch_assoc($this->result)){
 				$this->rows[]=$data;
 			}
 		}
