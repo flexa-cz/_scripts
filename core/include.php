@@ -7,20 +7,28 @@
  * @author Vlahovic
  */
 
-// absolutni cesta do rootu domeny
+/**
+ *  absolutni cesta do rootu domeny vcetne lomitka na konci
+ */
 $root=str_replace(array('\\','core/include.php'),array('/',false),__FILE__);
 define('_ROOT',$root);
 
 // debugovaci skript
 // cim driv se vlozi tim driv zacne pocitat dobu behu aplikace
-require_once(_ROOT.'/core/debuger.class.php');
+require_once(_ROOT.'core/debuger.class.php');
 debuger::set_localhost(true);
 debuger::set_ui('inline');
 
 // vlozi nezbytne soubory
-require_once(_ROOT.'/core/constants.php');
-require_once(_ROOT.'/core/report.class.php');
-require_once(_ROOT.'/core/site.class.php');
-require_once(_ROOT.'/core/db.class.php');
-require_once(_ROOT.'/core/table.class.php');
+require_once(_ROOT.'core/constants.php');
+
+// core tridy
+require_once(_ROOT.'core/core.class.php');
+require_once(_ROOT.'core/site.class.php');
+require_once(_ROOT.'core/db.class.php');
+require_once(_ROOT.'core/table.class.php');
+
+// staticke tridy
+require_once(_ROOT.'core/report.class.php');
+require_once(_ROOT.'core/url.class.php');
 ?>

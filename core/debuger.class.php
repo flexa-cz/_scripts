@@ -93,7 +93,8 @@ class debuger{
 	div.debuger-report table th{background-color: black !important;color: white !important;}
 	div.debuger-report table td div.value{max-height: 500px !important;overflow: auto !important;}
 	div.debuger-report table td div.value pre{margin:0 !important;}
-	div.debuger-report table tr:nth-child(even) td{background-color: #eee !important;}";
+	div.debuger-report table tr:nth-child(even) td{background-color: #eee !important;}
+	div.debuger-report table tr:hover td,div.debuger-report table tr:hover:nth-child(even) td{background-color: #ccc !important;}";
 			$rows="
 	/* barevne oznaceni typu radku vypisu */
 	div.debuger-report table tr td.breakpoint,div.debuger-report table tr:nth-child(even) td.breakpoint{background-color: red !important;}
@@ -155,7 +156,7 @@ class debuger{
 			if(self::$enable_report){
 				self::set_backtrace();
 				self::$type='breakpoint';
-				self::$value=($value ? $value : '&mdash;');
+				self::$value=($value ? '<pre>'.$value.'</pre>' : '&mdash;');
 				self::set_report();
 			}
 		}

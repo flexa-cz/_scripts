@@ -108,6 +108,7 @@ class report{
 						$return.=_N.'<div class="report '.$type.'">'._N_T.'<p>'.implode('</p>'._N_T.'<p>',$r).'</p>'._N.'</div>';
 					}
 				}
+				unset(self::$reports[self::$report_name]);
 			}
 		}
 		return $return;

@@ -91,8 +91,13 @@ class Db{
 
 	public final function get_rows(){
 		$this->rows=array();
-		while($data=mysql_fetch_assoc($this->res)){
-			$this->rows[]=$data;
+		if($this->res){
+			while($data=mysql_fetch_assoc($this->res)){
+				$this->rows[]=$data;
+			}
+		}
+		else{
+			debuger::breakpoint();
 		}
 		return $this->rows;
 	}

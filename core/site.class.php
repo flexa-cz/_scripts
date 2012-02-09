@@ -72,7 +72,7 @@ class site{
 		$r.=_N_T.'<meta http-equiv="imagetoolbar" content="no" />';
 		$r.=_N_T.'<meta http-equiv="cache-control" content="cache" />';
 		$r.=($this->title ? _N_T.'<title>'.$this->title.'</title>' : false);
-		$r.=_N_T.'<link rel="stylesheet" type="text/css" href="../style/style.css" title="style" media="screen" />';
+		$r.=_N_T.'<link rel="stylesheet" type="text/css" href="../core/style/style.css" title="style" media="screen" />';
 		if(!empty($this->header)){
 			$r.=_N_T.implode(_N_T,$this->header);
 		}
