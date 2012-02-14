@@ -93,7 +93,7 @@ class Db{
 	}
 
 
-	public final function get_rows(){
+	public final function getRows(){
 		$this->rows=array();
 		if($this->result){
 			while($data=mysql_fetch_assoc($this->result)){

@@ -37,3 +37,15 @@ Thumbs.db
 ##############################
 *config.ini
 *config.php
+/core/libraries/simplehtmldom_1_5/manual/.svn/
+/core/libraries/simplehtmldom_1_5/manual/css/.svn/
+/core/libraries/simplehtmldom_1_5/manual/img/.svn/
+/core/libraries/simplehtmldom_1_5/manual/js/.svn/
+/core/libraries/simplehtmldom_1_5/testcase/.svn/
+/core/libraries/simplehtmldom_1_5/testcase/html/.svn/
+/core/libraries/simplehtmldom_1_5/testcase/reader/.svn/
+/core/libraries/simplehtmldom_1_5/app/.svn/
+/core/libraries/simplehtmldom_1_5/app/js/.svn/
+/core/libraries/simplehtmldom_1_5/app/js/images/.svn/
+/core/libraries/simplehtmldom_1_5/example/.svn/
+/core/libraries/simplehtmldom_1_5/example/scraping/.svn/

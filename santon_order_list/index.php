@@ -59,7 +59,7 @@ function order_delete($core){
 		$id=intval($_GET['delete']);
 		// existuje v db?
 		$query="SELECT COUNT(*) AS `count` FROM orders WHERE id=".$id;
-		$rows=$core->db->query($query)->get_rows();
+		$rows=$core->db->query($query)->getRows();
 		if($rows[0]['count']){
 			$query="DELETE FROM orders WHERE id=".$id;
 			$res=$core->db->query($query)->getResult();
@@ -125,7 +125,7 @@ function order_detail($core){
 			WHERE `id`=".intval($_GET['id'])."
 			LIMIT 1
 			";
-		$rows=$core->db->query($query)->get_rows();
+		$rows=$core->db->query($query)->getRows();
 		foreach($rows[0] as $key => $val){
 			report::getInstance()->setReport('<strong>'.$key.':</strong> '.(trim($val) ? $val : '&mdash;'),'info');
 		}
@@ -191,7 +191,7 @@ function list_of_orders($core){
 		".($to ? "AND `created_at`<='".$to."'" : false)."
 		".(!empty($_GET['order_by']) ? "ORDER BY `".mysql_real_escape_string($_GET['order_by'])."` ".(isset($_GET['desc']) ? 'DESC' : 'ASC') : false)."
 		";
-	$rows=$core->db->query($query)->get_rows();
+	$rows=$core->db->query($query)->getRows();
 
 	// tabulka
 	if($rows && is_array($rows) && count($rows)){
