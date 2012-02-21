@@ -98,10 +98,10 @@ function order_filter($core){
 	$core->site->addContent($select);
 
 	$core->site->addContent(_N.'<label for="from">vytvořeno od</label>');
-	$core->site->addContent(_N.'<input type="text" name="from" id="from" value="'.$_GET['from'].'" />');
+	$core->site->addContent(_N.'<input type="text" name="from" id="from" value="'.(isset($_GET['from']) ? $_GET['from'] : false).'" />');
 
 	$core->site->addContent(_N.'<label for="to">vytvořeno do</label>');
-	$core->site->addContent(_N.'<input type="text" name="to" id="to" value="'.$_GET['to'].'" />');
+	$core->site->addContent(_N.'<input type="text" name="to" id="to" value="'.(isset($_GET['to']) ? $_GET['to'] : false).'" />');
 
 	$core->site->addContent(_N.'<input type="submit" name="filter" class="button search" value="filtrovat" />');
 	$core->site->addContent(_N.'</fieldset>');
