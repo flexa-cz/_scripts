@@ -7,10 +7,13 @@
  */
 
 
-// absolutni cesta do rootu domeny
 // pokud neni definovana uz ze souboru include.php
 if(!defined('_ROOT')){
 	$root=str_replace(array('\\','core/constants.php'),array('/',false),__FILE__);
+	/**
+	*  absolutni cesta do rootu domeny
+	 * vcetne lomitka na konci
+	*/
 	define('_ROOT',$root);
 }
 

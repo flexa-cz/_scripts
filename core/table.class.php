@@ -24,6 +24,8 @@ class Table{
 	/* ************************************************************************ */
 	public final function setRows($rows){
 		$this->rows=$rows;
+		$this->table=false;
+		$this->table_header=false;
 		return $this;
 	}
 

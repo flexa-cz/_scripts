@@ -84,7 +84,11 @@ class Db{
 	 */
 	public final function query($query){
 		$this->result=@mysql_query($query,$this->mysql_connect);
-		debuger::breakpoint($this->result ? $query : mysql_error($this->mysql_connect)._N._N.$query);
+		debuger::breakpoint(
+						$this->result ?
+						$query :
+						mysql_error($this->mysql_connect)._N._N.$query
+		);
 		return $this;
 	}
 
@@ -104,6 +108,10 @@ class Db{
 			debuger::breakpoint();
 		}
 		return $this->rows;
+	}
+
+	public final function getMysqlConnect(){
+		return $this->mysql_connect;
 	}
 }
 ?>
