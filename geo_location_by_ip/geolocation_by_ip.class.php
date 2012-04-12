@@ -53,7 +53,7 @@ class GeolocationByIp
 	 * nastavi ip z parametru
 	 *
 	 * @param string $ip
-	 * @return \GGeolocationByIp	 *
+	 * @return \GeolocationByIp	 *
 	 * @since 11.4.12 9:06
 	 * @author Vlahovic
 	 */
@@ -71,7 +71,7 @@ class GeolocationByIp
 	/**
 	 * zjisti mesto a region podle ip
 	 *
-	 * @return \GGeolocationByIp	 *
+	 * @return \GeolocationByIp	 *
 	 * @since 11.4.12 9:05
 	 * @author Vlahovic
 	 */
@@ -158,7 +158,7 @@ class GeolocationByIp
 	 * zjisti nejaktivnejsi region zadane zeme
 	 *
 	 * @param string $country_code
-	 * @return \GGeolocationByIp	 *
+	 * @return \GeolocationByIp	 *
 	 * @since 12.4.12 10:47
 	 * @author Vlahovic
 	 */
@@ -194,7 +194,7 @@ class GeolocationByIp
 	 * zjisti jestli neni uz ulozeno v db
 	 * bere jen zaznamy mladsi nez tyden
 	 *
-	 * @return \GGeolocationByIp	 *
+	 * @return \GeolocationByIp	 *
 	 * @since 11.4.12 9:04
 	 * @author Vlahovic
 	 */
@@ -228,7 +228,7 @@ class GeolocationByIp
 	/**
 	 * zjisti z webu
 	 *
-	 * @return \GGeolocationByIp	 *
+	 * @return \GeolocationByIp	 *
 	 * @since 11.4.12 9:08
 	 * @author Vlahovic
 	 */
@@ -280,7 +280,7 @@ class GeolocationByIp
 	 * ulozi zemi, pokud jeste neni v databazi
 	 * jeji id doplni do vlastnosti
 	 *
-	 * @return \GGeolocationByIp	 *
+	 * @return \GeolocationByIp	 *
 	 * @since 12.4.12 9:07
 	 * @author Vlahovic
 	 */
@@ -314,7 +314,7 @@ class GeolocationByIp
 	 * ulozi kraj, pokud jeste neni v databazi
 	 * jeho id doplni do vlastnosti
 	 *
-	 * @return \GGeolocationByIp	 *
+	 * @return \GeolocationByIp	 *
 	 * @since 12.4.12 9:07
 	 * @author Vlahovic
 	 */
@@ -348,7 +348,7 @@ class GeolocationByIp
 	 * ulozi mesto, pokud jeste neni v databazi
 	 * jeho id doplni do vlastnosti
 	 *
-	 * @return \GGeolocationByIp	 *
+	 * @return \GeolocationByIp	 *
 	 * @since 12.4.12 9:07
 	 * @author Vlahovic
 	 */
