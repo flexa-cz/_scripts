@@ -15,13 +15,20 @@ class GeolocationByIp
 	private $id_region;
 	private $id_city;
 
-	private $ip_info_db_api_file;
+	/**
+	 * muj osobni api klic
+	 * kdyby toto nekdo chtel pouzit, at si prosim necha vygenerovat vlastni
+	 * http://ipinfodb.com/
+	 * @var string
+	 */
 	private $ip_info_db_api_key='a85781576da06e8c5fb97204b4e76156ae101f26ae8617c4016e4b03444c4e3b';
+	private $ip_info_db_api_file;
 	private $ip_info_db_detail;
 	private $ip_info_db_object;
 
 	private $db;
 	private $errors=array();
+	
 	/**
 	 * kolik dni se maji vysledky cachovat
 	 * @var integer
