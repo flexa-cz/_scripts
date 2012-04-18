@@ -90,5 +90,6 @@ $form.=_N.'</form>';
 
 $core->site->addContent($form);
 $core->site->addContent($return);
+$core->site->setHighlight($search);
 
 echo $core->site;

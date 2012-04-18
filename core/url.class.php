@@ -12,7 +12,7 @@ class Url{
 		return self::$addr_string;
 	}
 
-	public static final function getQueryString($exceptions){
+	public static final function getQueryString($exceptions=false){
 		static $cache=array();
 		if(!self::$query_string){
 			self::parseUrl();
@@ -45,7 +45,7 @@ class Url{
 	 * @param array $exceptions
 	 * @return array
 	 */
-	public static final function getUrlArray($exceptions){
+	public static final function getUrlArray($exceptions=false){
 		if(!self::$url_array){
 			self::parseUrl();
 		}

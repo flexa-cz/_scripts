@@ -28,7 +28,7 @@ class GeolocationByIp
 
 	private $db;
 	private $errors=array();
-	
+
 	/**
 	 * kolik dni se maji vysledky cachovat
 	 * @var integer
@@ -96,7 +96,7 @@ class GeolocationByIp
 	 * @return Vlahovic
 	 */
 	public final function getCountryCode(){
-		return $this->country_code;
+		return ($this->country_code && $this->country_code!='-' ? $this->country_code : false);
 	}
 
 	/**
@@ -106,7 +106,7 @@ class GeolocationByIp
 	 * @return Vlahovic
 	 */
 	public final function getRegion(){
-		return $this->region;
+		return ($this->region && $this->region!='-' ? $this->region : false);
 	}
 
 	/**
@@ -116,7 +116,7 @@ class GeolocationByIp
 	 * @return Vlahovic
 	 */
 	public final function getCity(){
-		return $this->city;
+		return ($this->city && $this->city!='-' ? $this->city : false);
 	}
 
 	/**

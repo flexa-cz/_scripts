@@ -7,6 +7,7 @@ class site{
 	private $content=false;
 	private $title=false;
 	private $header=array();
+	private $highlight;
 
 	/* ************************************************************************ */
 	/* magic methods																														*/
@@ -21,7 +22,7 @@ class site{
 		return	$this->header().
 						$this->site.
 						report::getInstance()->getReport().
-						$this->content.
+						zvyraznit($this->content,$this->highlight).
 						$this->footer();
 	}
 
@@ -48,6 +49,11 @@ class site{
 
 	final public function setTitle($title){
 		$this->title=$title;
+		return $this;
+	}
+
+	final public function setHighlight($highlight){
+		$this->highlight=$highlight;
 		return $this;
 	}
 
@@ -94,5 +100,22 @@ class site{
 		$r.=_N.'</html>';
 		return $r;
 	}
+
+}
+
+function odzvyraznit($matches) {
+    return preg_replace('~<span class="search-result">([^<]*)</span>~i', '\\1', $matches[0]);
+}
+
+function zvyraznit($text,$search) {
+    if ($search) {
+			$search = preg_quote(htmlspecialchars($search), '~');
+			$text = preg_replace("~$search~i", '<span class="search-result">\\0</span>', $text);
+			// odstranění zvýrazňování z obsahu <option> a <textarea> a zevnitř značek a entit
+			$span = '<span class="search-result">[^<]*</span>';
+			$pattern = "~<(option|textarea)[\\s>]([^<]*$span)+|<([^>]*$span)+|&([^;]*$span)+~i";
+			$text = preg_replace_callback($pattern, 'odzvyraznit', $text);
+    }
+    return $text;
 }
 

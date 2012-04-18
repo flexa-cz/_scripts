@@ -79,3 +79,9 @@ a.button.search, input[type=submit].button.search{background-image: url('./zoom.
 .icon.edit{background-image: url('./pencil.png');}
 .icon.delete{background-image: url('./cross.png');}
 /* ************************************************************************** */
+
+/* ************************************************************************** */
+/* texty																																			*/
+/* ************************************************************************** */
+span.search-result{background-color: yellow;}
+/* ************************************************************************** */
