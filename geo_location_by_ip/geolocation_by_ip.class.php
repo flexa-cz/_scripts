@@ -10,6 +10,7 @@ class GeolocationByIp
 	private $country_code;
 	private $region;
 	private $city;
+	private $already_checked;
 
 	private $id_country;
 	private $id_region;
@@ -45,7 +46,7 @@ class GeolocationByIp
 	 */
 	public function __construct($ip=false,$db=false)
 	{
-		$this->ip_info_db_api_file=_ROOT.'geo_location_by_ip/ip2locationlite.class.php';
+		$this->ip_info_db_api_file='./helpers/geolocation_by_ip/ip2locationlite.class.php';
 		$this->db=$db;
 		if($ip){
 			$this->setIp($ip);
@@ -69,6 +70,7 @@ class GeolocationByIp
 		$this->country_code=null;
 		$this->region=null;
 		$this->city=null;
+		$this->already_checked=null;
 		if(!preg_match('/^(\d{1,3}\.){3}\d{1,3}$/',$ip)){
 			$ip=false;
 		}
@@ -86,6 +88,7 @@ class GeolocationByIp
 	 */
 	public final function checkIp(){
 		$this->checkIpDb()->checkIpOnline();
+		$this->already_checked=true;
 		return $this;
 	}
 
@@ -96,6 +99,9 @@ class GeolocationByIp
 	 * @return Vlahovic
 	 */
 	public final function getCountryCode(){
+		if(!$this->already_checked){
+			$this->checkIp();
+		}
 		return ($this->country_code && $this->country_code!='-' ? $this->country_code : false);
 	}
 
@@ -106,6 +112,9 @@ class GeolocationByIp
 	 * @return Vlahovic
 	 */
 	public final function getRegion(){
+		if(!$this->already_checked){
+			$this->checkIp();
+		}
 		return ($this->region && $this->region!='-' ? $this->region : false);
 	}
 
@@ -116,6 +125,9 @@ class GeolocationByIp
 	 * @return Vlahovic
 	 */
 	public final function getCity(){
+		if(!$this->already_checked){
+			$this->checkIp();
+		}
 		return ($this->city && $this->city!='-' ? $this->city : false);
 	}
 

@@ -110,6 +110,11 @@ class Db{
 		return $this->rows;
 	}
 
+	public final function getRow($index=0){
+		$this->getRows();
+		return $this->rows[(integer) $index];
+	}
+
 	public final function getMysqlConnect(){
 		return $this->mysql_connect;
 	}

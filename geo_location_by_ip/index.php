@@ -5,8 +5,8 @@
  * @since 11.4.12 8:49
  * @author Vlahovic
  */
+$fill=false;
 
-$fill=true;
 
 // nezbytnosti
 require_once('../core/include.php');
@@ -15,7 +15,6 @@ $core=new Core;
 
 // pripoji db
 $core->db->setMysqlDatabase('spektrum-zdravi')->connect();
-
 // trida na zjistovani geolokace
 include('./geolocation_by_ip.class.php');
 $gl=new GeolocationByIp(false, $core->db->getMysqlConnect());
@@ -43,6 +42,7 @@ if($fill){
 // nas server
 $gl->setIp('77.93.215.68')->checkIp();
 var_dump($gl);
+exit('<p><b>file:</b> '.__FILE__.'<br><b>line:</b> '.__LINE__.'<br><b>function:</b> exit()</p>');
 
 // neco co nema vsechny udaje
 $gl->setIp('89.233.180.30')->checkIp();
