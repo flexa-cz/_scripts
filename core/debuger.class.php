@@ -85,7 +85,7 @@ class debuger{
 			$tables="
 	/* samotne tabulky s debug vypisem */
 	body{margin-bottom: 70px !important;}
-	div.debuger-report{width:100% !important;overflow: auto !important; background-color: white !important; text-align: left !important; padding: 5px  !important; font-family: Verdana, Geneva, Arial, Helvetica, sans-serif !important; font-size: 18px;".(self::$ui=='popup' ? 'display: none;' : false)."}
+	div.debuger-report{width:100% !important;overflow: auto !important; background-color: white !important; text-align: left !important; padding: 5px  !important; font-family: Verdana, Geneva, Arial, Helvetica, sans-serif !important; font-size: 18px;clear: both;".(self::$ui=='popup' ? 'display: none;' : false)."}
 	div.debuger-report h1{color:black;margin: 0 0 1em 0 !important; padding: 0 !important; font-size:100% !important;}
 	div.debuger-report table{border-collapse: collapse !important;background-color: white !important;border: 1px solid black !important;z-index: 1000000000 !important; -moz-box-shadow: 0px 0px 5px 0px #ccc; -webkit-box-shadow: 0px 0px 5px 0px #ccc; box-shadow: 0px 0px 5px 0px #ccc;}
 	div.debuger-report table tr{border:1px solid black  !important;}
