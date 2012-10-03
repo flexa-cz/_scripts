@@ -4,7 +4,7 @@
  * tag pro zobrazeni vysledku musi mit tridu bmi-score
  */
 function BmiCalculator(){
-	var log_enable = true;
+	var log_enable = false;
 	var log_trace = false;
 	var obj=null;
 	var score=null;
