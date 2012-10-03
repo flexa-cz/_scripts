@@ -53,7 +53,7 @@ function RangeSlider(){
 				range_slider.Write(this_range_slider);
 			});
 			// nastavi pozice slideru a inputu
-			range_slider.SetValue(this_range_slider, data['value']).LocateSlider(this_range_slider).UpdateValue(this_range_slider);
+			range_slider.SetValue(this_range_slider, data['value']).SetMin(this_range_slider).SetMax(this_range_slider).LocateSlider(this_range_slider).UpdateValue(this_range_slider);
 		}
 		all_range_sliders.push(this_range_slider);
 		Log(data);
@@ -132,6 +132,22 @@ function RangeSlider(){
 		var data=(jQuery.data(this_range_slider,'data'));
 		value=range_slider.ValueCorrection(this_range_slider,value);
 		data['value']=value;
+		jQuery.data(this_range_slider,'data',data);
+		return this;
+	}
+
+	this.SetMin=function(this_range_slider){
+		var data=(jQuery.data(this_range_slider,'data'));
+		var min=range_slider.ValueCorrection(this_range_slider, data['min']);
+		data['min']=min;
+		jQuery.data(this_range_slider,'data',data);
+		return this;
+	}
+
+	this.SetMax=function(this_range_slider){
+		var data=(jQuery.data(this_range_slider,'data'));
+		var max=range_slider.ValueCorrection(this_range_slider, data['max']);
+		data['max']=max;
 		jQuery.data(this_range_slider,'data',data);
 		return this;
 	}
