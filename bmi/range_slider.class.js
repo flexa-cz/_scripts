@@ -1,3 +1,9 @@
+/**
+ * html input typu range nahradi grafickym sliderem
+ * @todo predavat misto ukazatele na slider pole data
+ * @todo refaktorovat
+ * @todo predelat na jquery plugin
+ */
 function RangeSlider(){
 	var log_enable = false;
 	var log_trace = false;
@@ -238,6 +244,10 @@ function RangeSlider(){
 	this.GetValues=function(){
 		var values=new Array();
 		for(var key in all_range_sliders){
+			// je mozne, ze se vraci data pri entrovani, po psani do inputu
+			// proto je jeste potreba spustit metodu write,
+			//  aby se zmeny projevili
+			range_slider.Write(all_range_sliders[key]);
 			var data=(jQuery.data(all_range_sliders[key],'data'));
 			values[data['name']]=data['value'];
 		}
