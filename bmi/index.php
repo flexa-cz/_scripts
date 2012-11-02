@@ -27,6 +27,7 @@ $core->site->addContent('
 			<input type="range" name="height" min="30" max="220" value="180" step="1" title=" cm" />
 			<input type="submit" style="clear:both; display:block;" name="bmi_calculate" class="bmi-calculate" value="spocitat" />
 			<p class="bmi-score"></>
+			<div id="bmi-dial"></div>
 		</div>
 	</div>
 </form>');

@@ -62,3 +62,4 @@ span.value{
 div.input_type_range.active span.value{
 	/*display: block;*/
 }
+#bmi-dial{width: 350px; height: 350px;}
