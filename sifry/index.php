@@ -1,7 +1,7 @@
 <?php
 $cross=false;
 $morse=false;
-if(isset($_POST)){
+if(isset($_POST['cross'])){
 	/* ************************************************************************ */
 	/* kriz scitaci																															*/
 	/* ************************************************************************ */
@@ -109,7 +109,7 @@ if(isset($_POST)){
 	<table>
 		<tr>
 			<td><label for="cross">kriz</label></td>
-			<td><textarea cols="100" rows="10" name="cross" id="cross"><?=(!empty($_POST['cross']) ? $_POST['cross'] : false)?></textarea></td>
+			<td><textarea cols="10"0 rows="10" name="cross" id="cross"><?=(!empty($_POST['cross']) ? $_POST['cross'] : false)?></textarea></td>
 		</tr>
 		<tr>
 			<td><label for="morse">morseovka</label></td>
