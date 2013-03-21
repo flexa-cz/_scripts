@@ -13,7 +13,7 @@ $return=false;
 $core->site->setTitle('nalezeni nefunkcnich odkazu');
 $core->site->addHeader('<style type="text/css">'.debuger::get_css().'</style>');
 
-$core->db->setMysqlDatabase('propeople_cms_backup')->connect();
+$core->db->setMysqlDatabase('propeople_cms')->connect();
 
 // formular s vyberem aliasu a limitu
 $form='<form method="post" action="">';
@@ -26,7 +26,7 @@ $form.='</tr>';
 
 $form.='<tr>';
 $form.='<td><label for="url">Server URL</label></td>';
-$form.='<td><input type="text" name="url" id="url" value="http://www.new.spektrumzdravi.cz"></td>';
+$form.='<td><input type="text" name="url" id="url" value="http://www.spektrumzdravi.cz"></td>';
 $form.='</tr>';
 
 $form.='<tr>';
@@ -50,7 +50,7 @@ if(isset($_POST['alias']) && $_POST['alias'] && isset($_POST['url']) && $_POST['
 	$alias=mysql_real_escape_string($_POST['alias']);
 	$limit=(intval($_POST['limit']) ? 'LIMIT '.intval($_POST['limit']) : false);
 
-	$core->db->query("SET @root_idr=(SELECT `id_relations` FROM `settings` WHERE `name`='alias' AND `value` LIKE '%".$alias."%')");
+	$core->db->query("SET @root_idr=(SELECT `id_relations` FROM `settings` WHERE `name`='alias' AND `value` LIKE '%".$alias."%' LIMIT 1)");
 	$core->db->query("SET @root_lft=(SELECT `lft` FROM `relations` WHERE `id`=@root_idr)");
 	$core->db->query("SET @root_rgt=(SELECT `rgt` FROM `relations` WHERE `id`=@root_idr)");
 
@@ -128,11 +128,16 @@ function detect_invalid_links($html,$server_url){
 	}
 	// kontrola
 	foreach($links as $link){
-		$url=(strpos($link,'http')===false && strpos($link,'www')===false ? $server_url : false).$link;
-		$http_status=get_http_status($url);
-		if(!is_valid_status($http_status)){
-			$return['resume']='invalid';
-			$invalid[]='<li><a href="'.$url.'">'.$url.'</a><br />'.$http_status.'</li>';
+		if(strpos($link, 'mailto:')!==false){
+			// je v poradku
+		}
+		else{
+			$url=(strpos($link,'http')===false && strpos($link,'www')===false ? $server_url : false).$link;
+			$http_status=get_http_status($url);
+			if(!is_valid_status($http_status)){
+				$return['resume']='invalid';
+				$invalid[]='<li><a href="'.$url.'">'.$url.'</a><br />'.$http_status.'</li>';
+			}
 		}
 	}
 

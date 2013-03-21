@@ -1,17 +1,4 @@
 <?php
-// create an instance of the class, and use the current time
-for($d=1; $d<=30; $d++){
-	$date=strtotime('2010-03-'.$d.' 12:00:00');
-	$phase=new MoonPhaseForDay($date);
-	echo '<h3>'.$phase->curent_date.'</h3>';
-	echo '<p>';
-	echo '<br /><b>dalsi nov:</b> '.gmdate( 'G:i:s, j M Y', $phase->next_new_moon());
-	echo '<br /><b>dalsi uplnek:</b> '.gmdate( 'G:i:s, j M Y', $phase->next_full_moon());
-	echo '<br /><b>faze mesice pro den:</b> '.$phase->moon_phase_for_day();
-	echo '</p>';
-	echo '<hr/>';
-}
-
 /**
  * Moon phase calculation class
  * Adapted for PHP from Moontool for Windows (http://www.fourmilab.ch/moontoolw/)
@@ -31,6 +18,7 @@ class MoonPhase {
 	private $sunangdia;
 
 	protected $synmonth;
+	protected $ml;
 
 	private $quarters = null;
 
@@ -85,7 +73,8 @@ class MoonPhase {
 		$SunAng = $F * $sunangsiz;							// Sun's angular size in degrees
 
 		/* Calculation of the Moon's position */
-		$ml = $this->fixangle(13.1763966 * $Day + $mmlong);				// Moon's mean longitude
+		$this->ml = $ml = $this->fixangle(13.1763966 * $Day + $mmlong);				// Moon's mean longitude
+		var_dump($ml);
 		$MM = $this->fixangle($ml - 0.1114041 * $Day - $mmlongp);		// Moon's mean anomaly
 		$MN = $this->fixangle($mlnode - 0.0529539 * $Day);				// Moon's ascending node mean longitude
 		$Ev = 1.2739 * sin(deg2rad(2 * ($ml - $Lambdasun) - $MM));		// Evection
@@ -330,7 +319,10 @@ class MoonPhase {
 	}
 }
 
-
+/**
+ * @since 28.1.13 12:24
+ * @author Milan Vlahovic <vlahovic@propeople.cz>
+ */
 class MoonPhaseForDay extends MoonPhase{
 	public $curent_date;
 
