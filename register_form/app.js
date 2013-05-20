@@ -14,7 +14,7 @@ function RegisterForm(){
 		});
 		return this;
 	}
-
+// 86greasygrass
 	this.Submit = function(){
 		$.ajax({
 			url: "./register_form.php",
