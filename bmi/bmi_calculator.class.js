@@ -40,9 +40,9 @@ function BmiCalculator(){
 			event.stopPropagation();
 			event.preventDefault();
 			bmi_calculator.Calculate();
-		})
+		});
 		return this;
-	}
+	};
 
 	this.Calculate=function(){
 		var height=(range_slider.GetValue('height')/100);
@@ -52,7 +52,7 @@ function BmiCalculator(){
 		bmi_dial.html(bmi_calculator.get_flash_object(Math.round(bmi * 10) / 10));
 
 		return this;
-	}
+	};
 
 	this.GetResolve=function(){
 		var resolve='';
@@ -67,7 +67,7 @@ function BmiCalculator(){
 			}
 		}
 		return resolve;
-	}
+	};
 
 	/**
 	* korektni poskladani objeku s flash prvkem
@@ -94,7 +94,7 @@ function BmiCalculator(){
 		ret+='<!-- <![endif]-->';
 
 		return ret;
-	}
+	};
 
 	var Log = function(data){
 		if(log_enable){
@@ -104,7 +104,7 @@ function BmiCalculator(){
 			}
 		}
 		return this;
-	}
+	};
 }
 
 var bmi_calculator=new BmiCalculator();

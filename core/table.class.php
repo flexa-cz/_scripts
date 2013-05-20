@@ -29,6 +29,13 @@ class Table{
 		return $this;
 	}
 
+	public final function setRow($row){
+		$this->rows[]=$row;
+		$this->table=false;
+		$this->table_header=false;
+		return $this;
+	}
+
 	public final function setHeader($header){
 		$this->header=$header;
 		return $this;

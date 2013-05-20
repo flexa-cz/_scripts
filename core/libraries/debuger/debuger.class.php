@@ -156,7 +156,7 @@ class debuger{
 			if(self::$enable_report){
 				self::set_backtrace();
 				self::$type='breakpoint';
-				self::$value=($value ? '<pre>'.$value.'</pre>' : '&mdash;');
+				self::$value=($value ? '<pre>'.htmlentities($value).'</pre>' : '&mdash;');
 				self::set_report();
 			}
 		}
