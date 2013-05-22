@@ -1,5 +1,6 @@
 $(window).ready(function(){
-	tic_tac_toe_plan.Init('tic_tac_toe');
+	var player_1=new Player(1,'&cir;','Petr',$('div.debug_info.player_1'));
+	var player_2=new Player(2,'&times;','Pavel',$('.debug_info.player_2'));
+	var tic_tac_toe = new TicTacToe();
+	tic_tac_toe.Init('tic_tac_toe').SetPlayer(1, player_1).SetPlayer(2, player_2);
 });
-
-var tic_tac_toe_plan = new TicTacToePlan();

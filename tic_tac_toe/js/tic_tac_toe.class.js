@@ -1,21 +1,25 @@
-function TicTacToePlan(){
+function TicTacToe(){
 	var element_id=null;
 	var plan=null;
 	var cols=20;
 	var rows=20;
-	var active_player=1;
-	var player_1=new Array();
-	player_1['symbol']='&times;';
-	var player_2=new Array();
-	player_2['symbol']='&cir;';
+	var last_draw=null;
 	var players=new Array();
-	players[1]=player_1;
-	players[2]=player_2;
+	var active_player=1;
 	var active_cell=null;
 	var active_row=null;
 	var active_col=null;
 	var active_hover=null;
-	var last_play=null;
+	var round=1;
+	var round_phase=1;
+	var win_line_length=5;
+
+//	var player_1=new Array();
+//	player_1['symbol']='&times;';
+//	var player_2=new Array();
+//	player_2['symbol']='&cir;';
+//	players[1]=player_1;
+//	players[2]=player_2;
 
 	/**
 	 * spustit po nacteni okna, aby se hra vytvorila
@@ -26,6 +30,7 @@ function TicTacToePlan(){
 		plan=$('#'+id);
 		element_id=id;
 		this.Create().BindActions(this);
+		return this;
 	};
 
 	/**
@@ -82,15 +87,47 @@ function TicTacToePlan(){
 	 */
 	this.Play=function(){
 		if(!active_cell.html()){
-			if(last_play && last_play.length){
-				last_play.removeClass('last-play');
+			if(last_draw && last_draw.length){
+				last_draw.removeClass('last-draw');
 			}
-			active_cell.html(players[active_player]['symbol']).addClass('last-play');
-			last_play=active_cell;
-			this.SwitchPlayer();
+			active_cell.html(players[active_player].GetSymbol()).addClass('last-draw').addClass('finished');
+			last_draw=active_cell;
+			this.CheckWin().SavePlayerHistory().SwitchRound().SwitchPlayer();
 		}
 		return this;
 	};
+
+	this.CheckWin=function(){
+		var draws=players[active_player].GetDraws();
+		var arr=new Array();
+		arr['cell']=active_cell;
+		arr['row']=active_row;
+		arr['col']=active_col;
+		var check=new Array();
+		check[round]=arr;
+		var horizontal=check;
+		for(var i=0;i<win_line_length;i++){
+			for(var round_of_draw in draws){
+				if(this.CheckHorizontal(horizontal,draws[round_of_draw])){
+					horizontal[round_of_draw]=draws[round_of_draw];
+				}
+			}
+		}
+		console.log(horizontal);
+		return this;
+	};
+
+	this.CheckHorizontal=function(horizontal,draw){
+		var ret=false;
+		for(var round_of_horizontal in horizontal){
+			if(horizontal[round_of_horizontal]['row']===draw['row']){
+				if((horizontal[round_of_horizontal]['col']+1)==draw['col'] || (horizontal[round_of_horizontal]['col']-1)==draw['col']){
+					ret=true;
+				}
+			}
+		}
+		return ret;
+	}
 
 	/**
 	 * nastaveni aktualni bunky
@@ -106,12 +143,38 @@ function TicTacToePlan(){
 		return this;
 	};
 
+	this.SavePlayerHistory=function(){
+		players[active_player].SetDraw(round, active_cell, active_row, active_col).DebugInfo();
+		return this;
+	};
+
+	this.SwitchRound=function(){
+		if(round_phase===1){
+			round_phase=2;
+		}
+		else{
+			round_phase=1;
+			round++;
+		}
+		return this;
+	};
+
 	/**
 	 * prepne na druheho hrace
 	 * @returns {TicTacToePlan}
 	 */
 	this.SwitchPlayer=function(){
 		active_player=(active_player===1 ? 2 : 1);
+		return this;
+	};
+
+	this.SetPlayer=function(player_num,player_object){
+		if(player_num===1){
+			players[1]=player_object;
+		}
+		else if(player_num===2){
+			players[2]=player_object;
+		}
 		return this;
 	};
 }
