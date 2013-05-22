@@ -109,6 +109,7 @@ function TicTacToe(){
 		for(var i=0;i<win_line_length;i++){
 			for(var round_of_draw in draws){
 				if(this.CheckHorizontal(horizontal,draws[round_of_draw])){
+					console.log('check');
 					horizontal[round_of_draw]=draws[round_of_draw];
 				}
 			}
@@ -118,15 +119,14 @@ function TicTacToe(){
 	};
 
 	this.CheckHorizontal=function(horizontal,draw){
-		var ret=false;
 		for(var round_of_horizontal in horizontal){
 			if(horizontal[round_of_horizontal]['row']===draw['row']){
 				if((horizontal[round_of_horizontal]['col']+1)==draw['col'] || (horizontal[round_of_horizontal]['col']-1)==draw['col']){
-					ret=true;
+					return true;
 				}
 			}
 		}
-		return ret;
+		return false;
 	}
 
 	/**
