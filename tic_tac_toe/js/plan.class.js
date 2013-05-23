@@ -10,17 +10,10 @@ function Plan(){
 	var active_row=null;
 	var active_col=null;
 	var active_hover=null;
+	var active_itemid=null;
 	var round=1;
 	var round_phase=1;
-	var win_line_length=5;
-	var game=new Game();
-
-//	var player_1=new Array();
-//	player_1['symbol']='&times;';
-//	var player_2=new Array();
-//	player_2['symbol']='&cir;';
-//	players[1]=player_1;
-//	players[2]=player_2;
+	var game=new Game(cols,rows);
 
 	/**
 	 * spustit po nacteni okna, aby se hra vytvorila
@@ -40,11 +33,13 @@ function Plan(){
 	 */
 	this.Create=function(){
 		var act_row=null;
+		var item_id=0;
 		for (var row=1;row<=rows;row++){
 			plan.append('<div class="row" rel="' + row + '"></div>');
 			act_row=plan.children('div[rel=' + row +']');
 			for(var col=1;col<=cols;col++){
-				act_row.append('<div class="cell" rel="' + col + '"></div>');
+				item_id++;
+				act_row.append('<div class="cell" rel="' + col + '" itemid=" ' + item_id + '"></div>');
 			}
 		}
 		return this;
@@ -100,6 +95,14 @@ function Plan(){
 
 	this.CheckWinner=function(){
 		game.GetLines(active_player);
+		var wins=game.GetWins();
+		if(wins.length){
+			for(var key in wins){
+				for(var group_key in wins[key]){
+					wins[key][group_key]['cell'].css('background-color','orange');
+				}
+			}
+		}
 		return this;
 	};
 
@@ -111,14 +114,16 @@ function Plan(){
 	this.SetCell=function(cell){
 		var col=cell.attr('rel');
 		var row=cell.parent('div.row').attr('rel');
+		var itemid=cell.attr('itemid');
 		active_cell=cell;
 		active_row=row;
 		active_col=col;
+		active_itemid=itemid;
 		return this;
 	};
 
 	this.SavePlayerHistory=function(){
-		players[active_player].SetDraw(round, active_cell, active_row, active_col).DebugInfo();
+		players[active_player].SetDraw(round, active_cell, active_row, active_col, active_itemid).DebugInfo();
 		return this;
 	};
 
