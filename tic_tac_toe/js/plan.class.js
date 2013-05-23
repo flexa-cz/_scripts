@@ -1,4 +1,4 @@
-function TicTacToe(){
+function Plan(){
 	var element_id=null;
 	var plan=null;
 	var cols=20;
@@ -13,6 +13,7 @@ function TicTacToe(){
 	var round=1;
 	var round_phase=1;
 	var win_line_length=5;
+	var game=new Game();
 
 //	var player_1=new Array();
 //	player_1['symbol']='&times;';
@@ -92,42 +93,15 @@ function TicTacToe(){
 			}
 			active_cell.html(players[active_player].GetSymbol()).addClass('last-draw').addClass('finished');
 			last_draw=active_cell;
-			this.CheckWin().SavePlayerHistory().SwitchRound().SwitchPlayer();
+			this.SavePlayerHistory().CheckWinner().SwitchRound().SwitchPlayer();
 		}
 		return this;
 	};
 
-	this.CheckWin=function(){
-		var draws=players[active_player].GetDraws();
-		var arr=new Array();
-		arr['cell']=active_cell;
-		arr['row']=active_row;
-		arr['col']=active_col;
-		var check=new Array();
-		check[round]=arr;
-		var horizontal=check;
-		for(var i=0;i<win_line_length;i++){
-			for(var round_of_draw in draws){
-				if(this.CheckHorizontal(horizontal,draws[round_of_draw])){
-					console.log('check');
-					horizontal[round_of_draw]=draws[round_of_draw];
-				}
-			}
-		}
-		console.log(horizontal);
+	this.CheckWinner=function(){
+		game.GetLines(active_player);
 		return this;
 	};
-
-	this.CheckHorizontal=function(horizontal,draw){
-		for(var round_of_horizontal in horizontal){
-			if(horizontal[round_of_horizontal]['row']===draw['row']){
-				if((horizontal[round_of_horizontal]['col']+1)==draw['col'] || (horizontal[round_of_horizontal]['col']-1)==draw['col']){
-					return true;
-				}
-			}
-		}
-		return false;
-	}
 
 	/**
 	 * nastaveni aktualni bunky
@@ -169,6 +143,7 @@ function TicTacToe(){
 	};
 
 	this.SetPlayer=function(player_num,player_object){
+		game.SetPlayer(player_num,player_object);
 		if(player_num===1){
 			players[1]=player_object;
 		}

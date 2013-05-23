@@ -1,4 +1,5 @@
 function Player(player_number,player_symbol,player_name,player_debug){
+	this.player_no=player_number;// jen kvuli prehlednosti v console.log
 	var number=player_number;
 	var symbol=player_symbol;
 	var name=player_name;
@@ -12,12 +13,12 @@ function Player(player_number,player_symbol,player_name,player_debug){
 		arr['col']=col;
 		draws[round]=arr;
 		return this;
-	}
+	};
 
 	this.DebugInfo=function(){
 		debug.html(this.GetDrawsString());
 		return this;
-	}
+	};
 
 	this.GetDrawsString=function(){
 		var ret='';
@@ -29,7 +30,7 @@ function Player(player_number,player_symbol,player_name,player_debug){
 
 	this.GetDraws=function(){
 		return draws;
-	}
+	};
 
 	this.GetSymbol=function(){
 		return symbol;
