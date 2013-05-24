@@ -14,6 +14,9 @@ function Game(num_of_cols,num_of_rows){
 
 	/**
 	 * nastaveni hrace
+	 * @param {integer} player_num id hrace
+	 * @param {object} player_object objekt hrace
+	 * @return {Game}
 	 */
 	this.SetPlayer=function(player_num,player_object){
 		if(player_num===1){
@@ -27,40 +30,48 @@ function Game(num_of_cols,num_of_rows){
 
 	/**
 	 * vrati skupiny radku, sloupcu, diagonal
+	 * @param {integer} active_player id aktivniho hrace
+	 * @return {array} pole rad tahu
 	 */
 	this.GetLines=function(active_player){
 		var draws=players[active_player].GetDraws();
 		this.CheckLines(draws).CheckGroups();
 
-//		console.log('LINES');
-//		console.log(lines);
-//		console.log('GROUPS');
-//		console.log(groups);
-//		console.log('------------------------------------------------------------');
+		console.log('LINES');
+		console.log(lines);
+		console.log('GROUPS');
+		console.log(groups);
+		console.log('------------------------------------------------------------');
 		return lines;
 	};
 
 	/**
 	 * vrati vytezne skupiny
+	 * @return {array} pole vyteznych skupin tahu
 	 */
 	this.GetWins=function(){
 		return wins;
-	}
+	};
 
 	/**
 	 * vytahne vytezne skupiny
+	 * @param {array} group jedna skupina tahu
+	 * @return {Game}
 	 */
 	this.CheckWins=function(group){
 		if(group.length===win_line_length){
 			wins.push(group);
 		}
 		return this;
-	}
+	};
 
 	/**
 	 * grupuje tahy po skupinach v radcich, sloupcich a diagonalach
+	 * @return {Game}
 	 */
 	this.CheckGroups=function(){
+		wins=new Array();
+		groups=new Array();
 		var group=new Array();
 		for(var direction in lines){
 			groups[direction]=new Array();
@@ -87,10 +98,23 @@ function Game(num_of_cols,num_of_rows){
 			}
 		}
 		return this;
-	}
+	};
+
+	/**
+	 * vysti pro novou hru
+	 * @returns {Game}
+	 */
+	this.Reset=function(){
+		lines=new Array();
+		groups=new Array();
+		wins=new Array();
+		return this;
+	};
 
 	/**
 	 * grupuje tahy po radcich, sloupcich a diagonalach
+	 * @param {array} draws pole tahu
+	 * @returns {Game}
 	 */
 	this.CheckLines=function(draws){
 		lines=new Array();
@@ -103,7 +127,7 @@ function Game(num_of_cols,num_of_rows){
 					for(var direction in lines_settings){
 						assoc_key=this.GetAssocKey(direction,draws,round_of_draws_1);
 						if(
-							(draws[round_of_draws_1]['itemid']===draws[round_of_draws_1]['itemid']) ||
+							(draws[round_of_draws_1]['itemid']===draws[round_of_draws_2]['itemid']) ||
 							(draws[round_of_draws_1]['itemid']===draws[round_of_draws_1]['itemid']+lines_settings[direction]) ||
 							(draws[round_of_draws_1]['itemid']===draws[round_of_draws_2]['itemid']-lines_settings[direction])
 						){
@@ -122,6 +146,10 @@ function Game(num_of_cols,num_of_rows){
 
 	/**
 	 * posklada klic k danemu radku, sloupci, diagonale
+	 * @param {string} direction
+	 * @param {array} draws
+	 * @param {integer} round_of_draws_1
+	 * @returns {String}
 	 */
 	this.GetAssocKey=function(direction,draws,round_of_draws_1){
 		var assoc_key=null;

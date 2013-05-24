@@ -19,6 +19,12 @@ function Player(player_number,player_symbol,player_name,player_debug){
 		return this;
 	};
 
+	this.Reset=function(){
+		draws=new Array();
+		this.DebugInfo();
+		return this;
+	};
+
 	/**
 	 * vypisuje tahy
 	 */

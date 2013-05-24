@@ -3,8 +3,8 @@ function Plan(){
 	var plan=null;
 	var cols=20;
 	var rows=20;
-	var last_draw=null;
 	var players=new Array();
+	var last_draw=null;
 	var active_player=1;
 	var active_cell=null;
 	var active_row=null;
@@ -24,6 +24,27 @@ function Plan(){
 		plan=$('#'+id);
 		element_id=id;
 		this.Create().BindActions(this);
+		return this;
+	};
+
+	this.Reset=function(){
+		players[1].Reset();
+		players[2].Reset();
+		game.Reset();
+		plan.children('.row').children('.cell').html('').removeClass('last-draw').removeClass('win');
+
+		last_draw=null;
+		active_player=1;
+		active_cell=null;
+		active_row=null;
+		active_col=null;
+		active_hover=null;
+		active_itemid=null;
+		round=1;
+		round_phase=1;
+		console.log('============================================================');
+		console.log('RESET ======================================================');
+		console.log('============================================================');
 		return this;
 	};
 
@@ -99,7 +120,7 @@ function Plan(){
 		if(wins.length){
 			for(var key in wins){
 				for(var group_key in wins[key]){
-					wins[key][group_key]['cell'].css('background-color','orange');
+					wins[key][group_key]['cell'].addClass('win');
 				}
 			}
 		}
