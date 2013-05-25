@@ -1,10 +1,29 @@
-function Player(player_number,player_symbol,player_name,player_debug){
+function Player(player_number,player_symbol,player_name,player_debug,player_is_computer){
 	this.player_no=player_number;// jen kvuli prehlednosti v console.log
 	var number=player_number;
 	var symbol=player_symbol;
 	var name=player_name;
 	var debug=player_debug;
 	var draws=new Array();
+	var is_computer=player_is_computer;
+	var wins=0;
+
+	this.LetPlay=function(game,computer){
+		if(is_computer){
+			var rival_number=(number===1 ? 2 : 1);
+			var cell_to_play=computer.GetCellToPlay(game.GetGroups(number),game.GetGroups(rival_number));
+		}
+		return this;
+	}
+
+	this.AddWin=function(){
+		wins++;
+		return this;
+	}
+
+	this.GetWins=function(){
+		return wins;
+	}
 
 	/**
 	 * ulozi tah hrace
@@ -29,14 +48,16 @@ function Player(player_number,player_symbol,player_name,player_debug){
 	 * vypisuje tahy
 	 */
 	this.DebugInfo=function(){
-		debug.html(this.GetDrawsString());
+		var html='<span class="symbol">' + player_symbol + '</span><p>player ' + player_number + ': <strong>' + player_name + '</strong><br />wins: ' + wins + '</p>';
+		html+=GetDrawsString();
+		debug.html(html);
 		return this;
 	};
 
 	/**
 	 * radek pro vypis tahu
 	 */
-	this.GetDrawsString=function(){
+	var GetDrawsString=function(){
 		var ret='';
 		for(var key in draws){
 			ret+=key + ') ' + 'row ' + draws[key]['row'] + '; col ' + draws[key]['col'] + '<br>';

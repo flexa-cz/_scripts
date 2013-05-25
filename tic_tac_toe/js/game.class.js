@@ -12,6 +12,14 @@ function Game(num_of_cols,num_of_rows){
 	var groups=new Array();
 	var wins=new Array();
 
+	this.GetLinesSettings=function(){
+		return lines_settings;
+	}
+
+	this.GetWinLineLength=function(){
+		return win_line_length;
+	};
+
 	/**
 	 * nastaveni hrace
 	 * @param {integer} player_num id hrace
@@ -30,19 +38,18 @@ function Game(num_of_cols,num_of_rows){
 
 	/**
 	 * vrati skupiny radku, sloupcu, diagonal
-	 * @param {integer} active_player id aktivniho hrace
+	 * @param {integer} player_number id aktivniho hrace
 	 * @return {array} pole rad tahu
 	 */
-	this.GetLines=function(active_player){
-		var draws=players[active_player].GetDraws();
+	this.GetGroups=function(player_number){
+		var draws=players[player_number].GetDraws();
 		this.CheckLines(draws).CheckGroups();
-
-		console.log('LINES');
-		console.log(lines);
-		console.log('GROUPS');
-		console.log(groups);
-		console.log('------------------------------------------------------------');
-		return lines;
+//		console.log('LINES');
+//		console.log(lines);
+//		console.log('GROUPS');
+//		console.log(groups);
+//		console.log('------------------------------------------------------------');
+		return groups;
 	};
 
 	/**
@@ -59,10 +66,24 @@ function Game(num_of_cols,num_of_rows){
 	 * @return {Game}
 	 */
 	this.CheckWins=function(group){
-		if(group.length===win_line_length){
+		if(group.length>=win_line_length){
 			wins.push(group);
 		}
 		return this;
+	};
+
+	var SortArray=function(arr){
+		var sorted_array=new Array();
+		for(var itemid in arr){
+			sorted_array[arr[itemid]['itemid']]=arr[itemid];
+		}
+		var return_array=new Array();
+		for(var key in sorted_array){
+			if(sorted_array[key]!==undefined){
+				return_array.push(sorted_array[key]);
+			}
+		}
+		return return_array;
 	};
 
 	/**
@@ -77,18 +98,19 @@ function Game(num_of_cols,num_of_rows){
 			groups[direction]=new Array();
 			for(var assoc_key in lines[direction]){
 				var prev_itemid=null;
-				for(var itemid in lines[direction][assoc_key]){
+				var sorted_array=SortArray(lines[direction][assoc_key]);
+				for(var key in sorted_array){
 					if(
 						prev_itemid &&
-						lines[direction][assoc_key][itemid]['itemid']!==(prev_itemid+lines_settings[direction]) &&
-						lines[direction][assoc_key][itemid]['itemid']!==(prev_itemid-lines_settings[direction])
+						lines[direction][assoc_key][sorted_array[key]['itemid']+'-itemid']['itemid']!==(prev_itemid+lines_settings[direction]) &&
+						lines[direction][assoc_key][sorted_array[key]['itemid']+'-itemid']['itemid']!==(prev_itemid-lines_settings[direction])
 					){
 						groups[direction].push(group);
 						this.CheckWins(group);
 						group=new Array();
 					}
-					group.push(lines[direction][assoc_key][itemid]);
-					prev_itemid=lines[direction][assoc_key][itemid]['itemid'];
+					group.push(lines[direction][assoc_key][sorted_array[key]['itemid']+'-itemid']);
+					prev_itemid=lines[direction][assoc_key][sorted_array[key]['itemid']+'-itemid']['itemid'];
 				}
 				if(group.length){
 					groups[direction].push(group);
@@ -134,9 +156,7 @@ function Game(num_of_cols,num_of_rows){
 							if(!lines[direction][assoc_key]){
 								lines[direction][assoc_key]=new Array();
 							}
-							lines[direction][assoc_key]['itemid-' + draws[round_of_draws_1]['itemid']]=draws[round_of_draws_1];
-							lines[direction].sort();
-							lines[direction][assoc_key].sort();
+							lines[direction][assoc_key][draws[round_of_draws_1]['itemid'] + '-itemid']=draws[round_of_draws_1];
 						}
 					}
 			}
