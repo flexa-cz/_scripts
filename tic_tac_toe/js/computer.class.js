@@ -1,17 +1,33 @@
 /**
  * spocita na ktere pole bude pocitac hrat
+ * @todo zahajeni hry
+ * @todo ignorovat linii, ktera je kratsi nez 4 a je z jedne strany uzavrena (aspon pri obrane)
+ * @todo kombinace s druhou skupinou, kdyz se rozhoduje mezi vice moznostmi
  */
 function Computer(game_lines_settings){
 	var lines_settings=game_lines_settings;
 	var success;
 	var help_success;
+	var min_point_to_defense=9;
 
 	this.GetCellToPlay=function(my_groups,rival_groups){
-		CalculateSucces(my_groups);
-		var my_success=success;
-		console.log(my_success);
+		var return_itemid;
+
 		CalculateSucces(rival_groups);
 		var rival_success=success;
+		CalculateSucces(my_groups);
+		var my_success=success;
+
+		if((rival_success.length-1)>=min_point_to_defense){
+			var last_rival_success=rival_success[(rival_success.length-1)];
+			return_itemid=last_rival_success[Math.floor(Math.random()*last_rival_success.length)];
+		}
+		else{
+			var last_my_success=my_success[(my_success.length-1)];
+			return_itemid=last_my_success[Math.floor(Math.random()*last_my_success.length)];
+		}
+		console.log(return_itemid);
+		return $('div.cell[itemid='+return_itemid+']');
 	};
 
 	var CalculateSucces=function(groups){
@@ -35,7 +51,11 @@ function Computer(game_lines_settings){
 			}
 		}
 		else{
-
+			$('div.cell').each(function(){
+				if(!$(this).hasClass('finished')){
+					SetHelpSucces(0, $(this).attr('itemid'));
+				}
+			});
 		}
 		return this;
 	};

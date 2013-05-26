@@ -12,6 +12,7 @@ function Player(player_number,player_symbol,player_name,player_debug,player_is_c
 		if(is_computer){
 			var rival_number=(number===1 ? 2 : 1);
 			var cell_to_play=computer.GetCellToPlay(game.GetGroups(number),game.GetGroups(rival_number));
+			cell_to_play.click();
 		}
 		return this;
 	}
