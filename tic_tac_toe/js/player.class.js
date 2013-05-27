@@ -15,19 +15,25 @@ function Player(player_number,player_symbol,player_name,player_debug,player_is_c
 			cell_to_play.click();
 		}
 		return this;
-	}
+	};
 
 	this.AddWin=function(){
 		wins++;
 		return this;
-	}
+	};
 
 	this.GetWins=function(){
 		return wins;
-	}
+	};
 
 	/**
 	 * ulozi tah hrace
+	 * @param {integer} round
+	 * @param {object} cell
+	 * @param {integer} row
+	 * @param {integer} col
+	 * @param {integer} itemid
+	 * @returns {Player}
 	 */
 	this.SetDraw=function(round,cell,row,col,itemid){
 		var arr=new Array();
