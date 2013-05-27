@@ -3,7 +3,7 @@ body{font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 10pt
 #tic_tac_toe{border-left: 2px solid #ccc; border-top: 2px solid #ccc; display: inline-block; margin: 20px; background: white;}
 #tic_tac_toe .row{margin: 0; padding: 0; float: left; clear: both;}
 #tic_tac_toe .cell{display: block; width: 20px; height: 20px; margin: 0; padding: 0; float: left; border-left: none; border-top: none; cursor: pointer; text-align: center; line-height: 20px; font-size: 16pt; font-weight: bold; overflow: hidden;}
-#tic_tac_toe .cell.hover{background-color: #eee;}
+#tic_tac_toe .cell.hover,#tic_tac_toe .cell:hover{background-color: #eee;}
 #tic_tac_toe .cell.finished{background-color: #fff; cursor: default;}
 #tic_tac_toe .cell.last-draw{background-color: #fcc;}
 #tic_tac_toe .cell.win{background-color: orange;}

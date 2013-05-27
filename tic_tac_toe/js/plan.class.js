@@ -15,7 +15,7 @@ function Plan(){
 	var round=1;
 	var round_phase=1;
 	var game=new Game(cols,rows);
-	var computer=new Computer(game.GetLinesSettings());
+	var computer=new Computer(game.GetLinesSettings(),game.GetWinLineLength(),cols,rows);
 
 	/**
 	 * spustit po nacteni okna, aby se hra vytvorila

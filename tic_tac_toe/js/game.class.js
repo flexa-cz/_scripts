@@ -118,6 +118,9 @@ function Game(num_of_cols,num_of_rows){
 					group=new Array();
 				}
 			}
+//			if(!groups[direction]){
+//				delete groups[direction];
+//			}
 		}
 		return this;
 	};

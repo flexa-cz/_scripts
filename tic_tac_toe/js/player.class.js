@@ -12,21 +12,28 @@ function Player(player_number,player_symbol,player_name,player_debug,player_is_c
 		if(is_computer){
 			var rival_number=(number===1 ? 2 : 1);
 			var cell_to_play=computer.GetCellToPlay(game.GetGroups(number),game.GetGroups(rival_number));
+			cell_to_play.click();
 		}
 		return this;
-	}
+	};
 
 	this.AddWin=function(){
 		wins++;
 		return this;
-	}
+	};
 
 	this.GetWins=function(){
 		return wins;
-	}
+	};
 
 	/**
 	 * ulozi tah hrace
+	 * @param {integer} round
+	 * @param {object} cell
+	 * @param {integer} row
+	 * @param {integer} col
+	 * @param {integer} itemid
+	 * @returns {Player}
 	 */
 	this.SetDraw=function(round,cell,row,col,itemid){
 		var arr=new Array();
