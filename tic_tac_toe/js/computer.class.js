@@ -3,8 +3,12 @@
  * @todo zahajeni hry
  * @todo ignorovat linii, ktera je kratsi nez 4 a je z jedne strany uzavrena (aspon pri obrane)
  * @todo kombinace s druhou skupinou, kdyz se rozhoduje mezi vice moznostmi
+ * @todo kdyz ma nekde posledni tah k vyhre, tak nebranit
+ * @todo snizit pocet pruchodu pri skladani skupin
  * @param {array} game_lines_settings informace o hracim poli
  * @param {array} game_win_line_length delka vytezne skupiny znaku
+ * @param {integer} plan_cols pocet sloupcu herniho pole
+ * @param {integer} plan_rows pocet radku herniho pole
  */
 function Computer(game_lines_settings,game_win_line_length,plan_cols,plan_rows){
 	var lines_settings=game_lines_settings;
@@ -23,7 +27,7 @@ function Computer(game_lines_settings,game_win_line_length,plan_cols,plan_rows){
 		var my_success=success;
 		CalculateSucces(rival_groups);
 		var rival_success=success;
-		console.log(rival_success);
+//		console.log(rival_success);
 		if((rival_success.length-1)>=min_point_to_defense){
 			var last_rival_success=rival_success[(rival_success.length-1)];
 			return_itemid=last_rival_success[Math.floor(Math.random()*last_rival_success.length)];
@@ -68,8 +72,8 @@ function Computer(game_lines_settings,game_win_line_length,plan_cols,plan_rows){
 	};
 
 	var SetHelpSucces=function(group_length,first_itemid,last_itemid,lines_direction_settings){
-		var prev_cell_itemid=first_itemid+lines_direction_settings;
-		var next_cell_itemid=last_itemid-lines_direction_settings;
+		var prev_cell_itemid=first_itemid-lines_direction_settings;
+		var next_cell_itemid=last_itemid+lines_direction_settings;
 		var prev_cell=null;
 		if(prev_cell_itemid>0){
 			prev_cell=$('div.cell[itemid='+prev_cell_itemid+']');
@@ -80,9 +84,11 @@ function Computer(game_lines_settings,game_win_line_length,plan_cols,plan_rows){
 		}
 		// spocita body
 		var points=0;
+//		if(((prev_cell && prev_cell.length) && (next_cell && next_cell.length)) || (group_length===(win_line_length-1))){
 		if(((prev_cell && prev_cell.length && !prev_cell.hasClass('finished')) && (next_cell && next_cell.length && !next_cell.hasClass('finished'))) || (group_length===(win_line_length-1))){
 			points=group_length*group_length*2;
-			console.log('points: ' + points);
+//			console.log('length: ' + group_length);
+//			console.log('points: ' + points);
 		}
 		else{
 			points=Math.ceil((min_point_to_defense-1)/((win_line_length-1)-group_length));
@@ -93,6 +99,12 @@ function Computer(game_lines_settings,game_win_line_length,plan_cols,plan_rows){
 	};
 
 	var SetHelpSuccessPoints=function(cell,itemid,points){
+//		if(points>30){
+//			console.log('-----------------------------------------------------');
+//			console.log('points:' + points);
+//			console.log('cell:');
+//			console.log(cell);
+//		}
 		if(cell && !cell.hasClass('finished')){
 			if(help_success[itemid]){
 				help_success[itemid]+=points;
