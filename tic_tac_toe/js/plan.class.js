@@ -1,8 +1,5 @@
-function Plan(){
-	var element_id=null;
-	var plan=null;
-	var cols=20;
-	var rows=20;
+function Plan(plan_id,plan_cols,plan_rows){
+	var plan=$('#'+plan_id);
 	var players=new Array();
 	var last_draw=null;
 	var active_player_number=1;
@@ -10,37 +7,21 @@ function Plan(){
 	var active_cell=null;
 	var active_row=null;
 	var active_col=null;
-	var active_hover=null;
 	var active_itemid=null;
 	var round=1;
+	var cols=plan_cols;
+	var rows=plan_rows;
+	var game=null;
 	var round_phase=1;
-	var game=new Game(cols,rows);
-	var computer=new Computer(game.GetLinesSettings(),game.GetWinLineLength(),cols,rows);
-
-	/**
-	 * spustit po nacteni okna, aby se hra vytvorila
-	 * @param {type} id
-	 * @returns {undefined}
-	 */
-	this.Init=function(id){
-		plan=$('#'+id);
-		element_id=id;
-		this.Create().BindActions(this);
-		return this;
-	};
+	var computer=null;
 
 	this.Reset=function(){
-		players[1].Reset();
-		players[2].Reset();
-		game.Reset();
 		plan.children('.row').children('.cell').html('').removeClass('last-draw').removeClass('win');
-
 		last_draw=null;
 		active_player_number=1;
 		active_cell=null;
 		active_row=null;
 		active_col=null;
-		active_hover=null;
 		active_itemid=null;
 		round=1;
 		round_phase=1;
@@ -68,37 +49,6 @@ function Plan(){
 		return this;
 	};
 
-	/**
-	 * povesi vsechny potrebne udalosti
-	 * @param {type} self
-	 * @returns {Plan}
-	 */
-	this.BindActions=function(self){
-		$('#'+element_id+' .cell').each(function(){
-			$(this)
-				.click(function(){
-					self.Click($(this));
-				})
-				.mouseenter(function(){
-					active_hover=$(this);
-					$(this).addClass('hover');
-				})
-				.mouseleave(function(){
-					active_hover.removeClass('hover');
-				});
-		});
-		return this;
-	};
-
-	/**
-	 * provede klik na bunku
-	 * @param {type} cell
-	 * @returns {Plan}
-	 */
-	this.Click=function(cell){
-		this.SetCell(cell).Play();
-		return this;
-	};
 
 	/**
 	 * zkusi provest tah na aktualnim poli
@@ -136,7 +86,7 @@ function Plan(){
 		active_player.AddWin();
 		this.Reset();
 		return this;
-	}
+	};
 
 	/**
 	 * nastaveni aktualni bunky
@@ -151,6 +101,16 @@ function Plan(){
 		active_row=row;
 		active_col=col;
 		active_itemid=itemid;
+		return this;
+	};
+
+	this.SetComputer=function(c){
+		computer=c;
+		return this;
+	};
+
+	this.SetGame=function(g){
+		game=g;
 		return this;
 	};
 
