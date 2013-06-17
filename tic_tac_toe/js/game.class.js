@@ -14,7 +14,7 @@ function Game(num_of_cols,num_of_rows){
 
 	this.GetLinesSettings=function(){
 		return lines_settings;
-	}
+	};
 
 	this.GetWinLineLength=function(){
 		return win_line_length;
@@ -41,8 +41,8 @@ function Game(num_of_cols,num_of_rows){
 	 * @param {integer} player_number id aktivniho hrace
 	 * @return {array} pole rad tahu
 	 */
-	this.GetGroups=function(player_number){
-		var draws=players[player_number].GetDraws();
+	this.GetGroups=function(active_player){
+		var draws=active_player.GetDraws();
 		this.CheckLines(draws).CheckGroups();
 //		console.log('LINES');
 //		console.log(lines);
