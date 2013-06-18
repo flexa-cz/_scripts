@@ -1,3 +1,7 @@
+/**
+ * @todo snizit pocet volani game.CheckGroups
+ * @returns {TicTacToe}
+ */
 function TicTacToe(){
 	var player_1;
 	var player_2;
@@ -9,6 +13,7 @@ function TicTacToe(){
 	var active_hover;
 	var last_draw;
 	var active_player;
+	var rival_player;
 	var active_player_number=1;
 	var round=1;
 	var round_phase=1;
@@ -92,13 +97,13 @@ function TicTacToe(){
 			plan.GetActiveCell().html(active_player.GetSymbol()).addClass('last-draw').addClass('finished');
 			last_draw=plan.GetActiveCell();
 			this.SavePlayerHistory().CheckWinner().SwitchRound().SwitchPlayer();
-			active_player.LetPlay(game,computer);
+			active_player.LetPlay(game,computer,rival_player);
 		}
 		return this;
 	};
 
 	this.SavePlayerHistory=function(){
-		active_player.SetDraw(round, plan.GetActiveCell(), plan.GetActiveRow, plan.GetActiveCol, plan.GetActiveItemId()).DebugInfo();
+		active_player.SetDraw(round, plan.GetActiveCell(), plan.GetActiveRow(), plan.GetActiveCol(), plan.GetActiveItemId()).DebugInfo();
 		return this;
 	};
 
@@ -119,12 +124,17 @@ function TicTacToe(){
 	 */
 	this.SwitchPlayer=function(){
 		active_player_number=(active_player_number===1 ? 2 : 1);
-		this.SetActivePlayer();
+		this.SetActivePlayer().SetRivalPlayer();
 		return this;
 	};
 
 	this.SetActivePlayer=function(){
 		active_player=(active_player_number===1 ? player_1 : player_2);
+		return this;
+	};
+
+	this.SetRivalPlayer=function(){
+		rival_player=(active_player_number===2 ? player_1 : player_2);
 		return this;
 	};
 

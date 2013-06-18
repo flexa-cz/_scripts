@@ -10,6 +10,7 @@ function Game(num_of_cols,num_of_rows){
 	lines_settings['rt_to_lb']=cols*1-1;
 	var lines=new Array();
 	var groups=new Array();
+	var groups_new=new Array();
 	var wins=new Array();
 
 	this.GetLinesSettings=function(){
@@ -43,7 +44,8 @@ function Game(num_of_cols,num_of_rows){
 	 */
 	this.GetGroups=function(active_player){
 		var draws=active_player.GetDraws();
-		this.CheckLines(draws).CheckGroups();
+		var cells=active_player.GetCells();
+		this.CheckLines(draws).CheckGroups().CheckGroupsNew(cells);
 //		console.log('LINES');
 //		console.log(lines);
 //		console.log('GROUPS');
@@ -84,6 +86,34 @@ function Game(num_of_cols,num_of_rows){
 			}
 		}
 		return return_array;
+	};
+
+	this.CheckGroupsNew=function(cells){
+		var prev;
+		var prev_id;
+		var actual;
+		var actual_id;
+		var work=new Array();
+		// inicializace asociativnich poli
+		for(var direction in lines_settings){
+			work[direction]=new Array();
+		}
+		// samotne zpracovani
+		for(var key in cells){
+			actual=cells[key];
+			actual_id=actual.attr('itemid');
+			for(var direction in lines_settings){
+				if(!prev){
+					work[direction].push(actual);
+				}
+				else if(prev_id){
+					
+				}
+			}
+			prev=actual;
+			prev_id=actual_id;
+		}
+		return this;
 	};
 
 	/**

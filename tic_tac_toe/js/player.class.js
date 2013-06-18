@@ -4,14 +4,14 @@ function Player(player_number,player_symbol,player_name,player_debug,player_is_c
 	var symbol=player_symbol;
 	var name=player_name;
 	var debug=player_debug;
-	var draws=new Array();
+	var draws=new Array();// pole odehranych tahu
+	var cells=new Array();// pole obsazenych poli
 	var is_computer=player_is_computer;
 	var wins=0;
 
-	this.LetPlay=function(game,computer){
+	this.LetPlay=function(game,computer,rival_player){
 		if(is_computer){
-			var rival_number=(number===1 ? 2 : 1);
-			var cell_to_play=computer.GetCellToPlay(game.GetGroups(number),game.GetGroups(rival_number));
+			var cell_to_play=computer.GetCellToPlay(game.GetGroups(this),game.GetGroups(rival_player));
 			cell_to_play.click();
 		}
 		return this;
@@ -42,6 +42,7 @@ function Player(player_number,player_symbol,player_name,player_debug,player_is_c
 		arr['col']=col*1;
 		arr['itemid']=itemid*1;
 		draws[round]=arr;
+		cells[itemid]=cell;
 		return this;
 	};
 
@@ -77,6 +78,10 @@ function Player(player_number,player_symbol,player_name,player_debug,player_is_c
 	 */
 	this.GetDraws=function(){
 		return draws;
+	};
+
+	this.GetCells=function(){
+		return cells;
 	};
 
 	/**

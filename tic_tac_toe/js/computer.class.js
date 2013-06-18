@@ -5,6 +5,7 @@
  * @todo kombinace s druhou skupinou, kdyz se rozhoduje mezi vice moznostmi
  * @todo kdyz ma nekde posledni tah k vyhre, tak nebranit
  * @todo snizit pocet pruchodu pri skladani skupin
+ * 
  * @param {array} game_lines_settings informace o hracim poli
  * @param {array} game_win_line_length delka vytezne skupiny znaku
  * @param {integer} plan_cols pocet sloupcu herniho pole
