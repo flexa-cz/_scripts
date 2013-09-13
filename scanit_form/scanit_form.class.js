@@ -1,11 +1,11 @@
-function PacesForm(){
+function ScanitForm(){
 	var self=this;
 	var form;
-	var php_script_address='http://localhost/_scripts/paces_form/paces_form.php';
+	var php_script_address='http://localhost/_scripts/scanit_form/scanit_form.php';
 	var token='';
 
 	this.init=function(){
-		form=$('form#paces_form');
+		form=$('form#scanit_form');
 		form.find('input[type=submit]').click(function(event){
 			event.stopPropagation();
 			event.preventDefault();
