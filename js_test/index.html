@@ -1,0 +1,23 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+		<div id="js_test">
+			<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+			<script type="text/javascript">
+				$(window).ready(function(){
+					$('#js_test').css('border','2px solid red').css('background','yellow').html('Click at me!!!').click(function(){
+						alert('Javascript with Jquery working!!! YEAAA...');
+					});
+				});
+			</script>
+		</div>
+  </body>
+</html>
