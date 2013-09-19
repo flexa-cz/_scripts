@@ -7,20 +7,43 @@ and open the template in the editor.
   <head>
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="scanit_form.css" />
 		<script type="text/javascript" src="./jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="./scanit_form.class.js"></script>
 		<script type="text/javascript" src="./scanit_form.js"></script>
   </head>
   <body>
 		<form id="scanit_form" action="" method="post">
-			<input type="text" name="pieces" />
-			<input type="text" name="type" />
-			<select name="sex">
-				<option>--</option>
-				<option>male</option>
-				<option>female</option>
-			</select>
-			<input type="submit" value="objednat" />
+			<table class="order-form">
+				<tr>
+					<th colspan="4">Vaše negativy a diapozitivy</th>
+				</tr>
+				<tr>
+					<td>Vyberte rozlišení</td>
+					<td>ks</td>
+					<td>cena/ks</td>
+					<td>cena</td>
+				</tr>
+				<tr>
+					<td>
+						35 mm film
+						<select name="35_mm_dpi" class='dpi'>
+							<option value="1400">1400 dpi</option>
+							<option value="2700">2700 dpi</option>
+							<option value="4000">4000 dpi</option>
+						</select>
+					</td>
+					<td><input type="text" name="35_mm_pieces" class="pieces" id="35_mm" /></td>
+					<td><input type="text" name="35_mm_price_per_pieces" readonly="readonly" /></td>
+					<td><input type="text" name="35_mm_price_sum" readonly="readonly" /></td>
+				</tr>
+				<tr>
+					<td>
+						Objednávka celkem...
+					</td>
+					<td colspan="3"><input type="submit" value="Objednat" /></td>
+				</tr>
+			</table>
 		</form>
   </body>
 </html>
