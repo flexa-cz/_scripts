@@ -1,1 +1,11 @@
+#scanit_form{font-family: Helvetica, Arial, sans-serif; font-size: 11pt; background: #E2E3E4; padding: 1em;}
 #scanit_form input[type='text']{width: 50px;}
+#scanit_form th{text-align: left; color: #ED1C24; font-size: 120%; padding: 1em .1em .1em .1em;}
+#scanit_form td{padding: .3em .1em .1em .1em; vertical-align: top;}
+#scanit_form input[type='text']{border: 1px solid #939598; padding: .1em; background: white; color: black;}
+#scanit_form input.disabled{border: none; color: #666;}
+#scanit_form select{border: none; background: #ED1C24; color: white; padding: .1em;}
+#scanit_form input#sum_all{float: right;}
+#scanit_form label{width: 100%; display: block;}
+#scanit_form input[type='submit']{background: #ED1C24; color: white; margin: 1em 0 0 0; padding: .5em; border: none; text-align: center; width: 100%;}
+#scanit_form hr{display: block; margin: 1em 0; border-top: 1px solid #939598;}

@@ -1,36 +1,60 @@
-function ScanitForm(){
+function ScanitForm(_php_script_address){
 	var self=this;
 	var form;
-	var php_script_address='http://localhost/_scripts/scanit_form/scanit_form.php';
-	var token='';
-	var prices={
-		'35_mm':{
-			'1400':{'100':7,'500':6.5,'infinity':5.5},
-			'2700':{'100':9.5,'500':9,'infinity':8.5},
-			'4000':{'100':12,'500':11,'infinity':10}
-		},
-		'roll':{
-			'1400':{'4.5':17,'6':19,'7':20,'8':22,'9':25},
-			'2700':{'4.5':27,'6':32,'7':34,'8':36,'9':40},
-			'4000':{'4.5':35,'6':40,'7':45,'8':50,'9':55}
-		}
-	};
+	var php_script_address=_php_script_address;
+	var prices;
+	var sum_all;
 
 	this.init=function(){
+		self.initPrices();
 		form=$('form#scanit_form');
 		form.find('input.pieces').keyup(function(){
-			self.calculatePrice($(this));
+			self.calculateAllPrices();
 		});
 		form.find('select.dpi').change(function(){
-			self.calculatePrice($(this).parent('td').parent('tr').find('input.pieces'));
+			self.calculateAllPrices();
 		});
 		form.find('input[type=submit]').click(function(event){
 			event.stopPropagation();
 			event.preventDefault();
 			self.submit();
 		});
-		form.find('input.pieces').keyup();
+		self.calculateAllPrices();
 		return self;
+	};
+
+	this.initPrices=function(){
+    $.ajax({
+			type: 'post',
+			url: php_script_address,
+    	data: 'get_actual_prices=1',
+			dataType: 'json',
+			async: false
+    }).done(function(data){
+			prices=data;
+			var inputs_names=new Array(
+				'glass_frame',
+				'48_bit_tiff',
+				'dvd',
+				'archive_dvd',
+				'transport_2_post',
+				'transport_2_manual',
+				'payment_cash',
+				'payment_on_delivery',
+				'payment_transfer'
+			);
+			for(var key in inputs_names){
+				$('input[name='+inputs_names[key]+'_price_per_pieces]').val(prices[inputs_names[key]]);
+			}
+		});
+	};
+
+	this.calculateAllPrices=function(){
+		sum_all=0;
+		form.find('input.pieces').each(function(){
+			self.calculatePrice($(this));
+		});
+		$('input#sum_all').val(sum_all);
 	};
 
 	this.calculatePrice=function(input){
@@ -41,25 +65,35 @@ function ScanitForm(){
 		var input_price_sum=form.find('input[name='+type+'_price_sum]');
 		var price_per_pieces=self.getPricePerPieces(type, dpi, pieces);
 		input_price_per_pieces.attr('value',price_per_pieces);
-		input_price_sum.attr('value',(pieces*price_per_pieces));
+		var sum=pieces*price_per_pieces;
+		sum_all+=sum;
+		input_price_sum.attr('value',sum);
 		return self;
 	};
 
 	this.getPricePerPieces=function(type, dpi, pieces){
 		var price_per_pieces=0;
-		for(var key in prices[type][dpi]){
-			var int_key=parseInt(key);
-			if(pieces<int_key || key==='infinity'){
-				price_per_pieces=prices[type][dpi][key];
-				break;
+		// isnt it fix price?
+		var input_price_per_pieces=$('input[name='+type+'_price_per_pieces]');
+		if(input_price_per_pieces.hasClass('fix-price')){
+			price_per_pieces=input_price_per_pieces.val();
+		}
+		// floating price
+		else{
+			for(var key in prices[type][dpi]){
+				var int_key=parseInt(key);
+				if(pieces<int_key || key==='infinity'){
+					price_per_pieces=prices[type][dpi][key];
+					break;
+				}
 			}
 		}
 		return price_per_pieces;
 	};
 
 	this.submit=function(){
+		self.calculateAllPrices();
 		var post_data=form.serialize();
-		console.log(post_data);
     $.ajax({
 			type: 'post',
 			url: php_script_address,
