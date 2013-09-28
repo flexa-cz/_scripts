@@ -6,12 +6,16 @@ function ScanitForm(_php_script_address){
 	var sum_all;
 
 	this.init=function(){
-		self.initPrices();
 		form=$('form#scanit_form');
+		self.initPrices();
+		// bind actions
 		form.find('input.pieces').keyup(function(){
 			self.calculateAllPrices();
 		});
 		form.find('select.dpi').change(function(){
+			self.calculateAllPrices();
+		});
+		form.find('input[type=radio]').click(function(){
 			self.calculateAllPrices();
 		});
 		form.find('input[type=submit]').click(function(event){
@@ -46,13 +50,29 @@ function ScanitForm(_php_script_address){
 			for(var key in inputs_names){
 				$('input[name='+inputs_names[key]+'_price_per_pieces]').val(prices[inputs_names[key]]);
 			}
+		}).error(function(){
+			self.showError().removeTable();
 		});
+		return self;
+	};
+
+	this.showError=function(){
+		form.prepend('<p class="error">Omlouváme se, ale momentálně je objednávkový systém mimo provoz.<br /> Zkuste to prosím později, nebo nám zašlete e-mail.</p>');
+		return self;
+	};
+
+	this.removeTable=function(){
+		form.children('table').remove();
+		return self;
 	};
 
 	this.calculateAllPrices=function(){
 		sum_all=0;
 		form.find('input.pieces').each(function(){
 			self.calculatePrice($(this));
+		});
+		form.find('input.radio-binding').each(function(){
+			self.calculatePriceWithRadioBinding($(this));
 		});
 		$('input#sum_all').val(sum_all);
 	};
@@ -69,6 +89,13 @@ function ScanitForm(_php_script_address){
 		sum_all+=sum;
 		input_price_sum.attr('value',sum);
 		return self;
+	};
+
+	this.calculatePriceWithRadioBinding=function(input){
+		var id=input.attr('itemid');
+		if($('input#'+id+'[type=radio]').is(':checked')){
+			sum_all+=parseInt(input.val());
+		}
 	};
 
 	this.getPricePerPieces=function(type, dpi, pieces){
@@ -107,6 +134,8 @@ function ScanitForm(_php_script_address){
 			else{
 //				alert('bylo odeslano');
 			}
+		}).error(function(){
+			self.showError();
 		});
 		return self;
 	};

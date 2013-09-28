@@ -9,3 +9,4 @@
 #scanit_form label{width: 100%; display: block;}
 #scanit_form input[type='submit']{background: #ED1C24; color: white; margin: 1em 0 0 0; padding: .5em; border: none; text-align: center; width: 100%;}
 #scanit_form hr{display: block; margin: 1em 0; border-top: 1px solid #939598;}
+#scanit_form p.error{border: 1px solid red; background: #ffc; color: red; font-size: 12pt; padding: 1em; margin: 1em;}
