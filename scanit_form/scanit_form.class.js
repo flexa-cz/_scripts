@@ -10,20 +10,20 @@ function ScanitForm(_php_script_address){
 		self.initPrices();
 		// bind actions
 		form.find('input.pieces').keyup(function(){
-			self.calculateAllPrices();
+			self.calculatePrices();
 		});
-		form.find('select.dpi').change(function(){
-			self.calculateAllPrices();
+		form.find('select').change(function(){
+			self.calculatePrices();
 		});
 		form.find('input[type=radio]').click(function(){
-			self.calculateAllPrices();
+			self.calculatePrices();
 		});
 		form.find('input[type=submit]').click(function(event){
 			event.stopPropagation();
 			event.preventDefault();
 			self.submit();
 		});
-		self.calculateAllPrices();
+		self.calculatePrices();
 		return self;
 	};
 
@@ -57,8 +57,13 @@ function ScanitForm(_php_script_address){
 	};
 
 	this.showError=function(){
+		console.warn('PHP server is unavailable!');
 		form.prepend('<p class="error">Omlouváme se, ale momentálně je objednávkový systém mimo provoz.<br /> Zkuste to prosím později, nebo nám zašlete e-mail.</p>');
 		return self;
+	};
+
+	this.removeError=function(){
+		form.children('p.error').remove();
 	};
 
 	this.removeTable=function(){
@@ -66,7 +71,7 @@ function ScanitForm(_php_script_address){
 		return self;
 	};
 
-	this.calculateAllPrices=function(){
+	this.calculatePrices=function(){
 		sum_all=0;
 		form.find('input.pieces').each(function(){
 			self.calculatePrice($(this));
@@ -75,6 +80,7 @@ function ScanitForm(_php_script_address){
 			self.calculatePriceWithRadioBinding($(this));
 		});
 		$('input#sum_all').val(sum_all);
+		return self;
 	};
 
 	this.calculatePrice=function(input){
@@ -96,9 +102,10 @@ function ScanitForm(_php_script_address){
 		if($('input#'+id+'[type=radio]').is(':checked')){
 			sum_all+=parseInt(input.val());
 		}
+		return self;
 	};
 
-	this.getPricePerPieces=function(type, dpi, pieces){
+	this.getPricePerPieces=function(type, type_key, pieces){
 		var price_per_pieces=0;
 		// isnt it fix price?
 		var input_price_per_pieces=$('input[name='+type+'_price_per_pieces]');
@@ -106,11 +113,21 @@ function ScanitForm(_php_script_address){
 			price_per_pieces=input_price_per_pieces.val();
 		}
 		// floating price
-		else{
-			for(var key in prices[type][dpi]){
+		else if(type==='35_mm'){
+			for(var key in prices[type][type_key]){
 				var int_key=parseInt(key);
 				if(pieces<int_key || key==='infinity'){
-					price_per_pieces=prices[type][dpi][key];
+					price_per_pieces=prices[type][type_key][key];
+					break;
+				}
+			}
+		}
+		else if(type==='roll'){
+			var size=$('select[name=size]').val();
+			for(var key in prices[type][type_key]){
+				var int_key=parseInt(key);
+				if(key===size){
+					price_per_pieces=prices[type][type_key][key];
 					break;
 				}
 			}
@@ -119,7 +136,7 @@ function ScanitForm(_php_script_address){
 	};
 
 	this.submit=function(){
-		self.calculateAllPrices();
+		self.calculatePrices().removeError();
 		var post_data=form.serialize();
     $.ajax({
 			type: 'post',

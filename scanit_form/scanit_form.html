@@ -20,6 +20,8 @@
 					<td>cena/ks</td>
 					<td>cena</td>
 				</tr>
+
+				<!-- 35mm film -->
 				<tr>
 					<td>
 						35 mm film
@@ -32,6 +34,29 @@
 					<td><input type="text" name="35_mm_pieces" class="pieces" id="35_mm" autocomplete="off" /></td>
 					<td><input type="text" name="35_mm_price_per_pieces" disabled="disabled" class="disabled" /></td>
 					<td><input type="text" name="35_mm_price_sum" disabled="disabled" class="sum disabled" /></td>
+				</tr>
+
+				<!-- svitkovy film -->
+				<tr>
+					<td>
+						Svitkový film
+						<select name="roll_dpi" class='dpi'>
+							<option value="1400">1400 dpi</option>
+							<option value="2700">2700 dpi</option>
+							<option value="4000">4000 dpi</option>
+						</select>
+						rozměr
+						<select name="size" class='size'>
+							<option value="6x4.5">6x4.5 cm</option>
+							<option value="6x6">6x6 cm</option>
+							<option value="6x7">6x7 cm</option>
+							<option value="6x8">6x8 cm</option>
+							<option value="6x9">6x9 cm</option>
+						</select>
+					</td>
+					<td><input type="text" name="roll_pieces" class="pieces" id="roll" autocomplete="off" /></td>
+					<td><input type="text" name="roll_price_per_pieces" disabled="disabled" class="disabled" /></td>
+					<td><input type="text" name="roll_price_sum" disabled="disabled" class="sum disabled" /></td>
 				</tr>
 
 				<!-- volitelne sluzby -->
@@ -155,6 +180,22 @@
 					<td>
 						<input type="text" name="payment_transfer_price_per_pieces" class="sum disabled radio-binding" itemid="payment_transfer" disabled="disabled" />
 					</td>
+				</tr>
+
+				<!-- kontakt -->
+				<tr>
+					<td colspan="4"><hr /></td>
+				</tr>
+				<tr>
+					<th colspan="4">Kontaktní údaje</th>
+				</tr>
+				<tr>
+					<td>Jméno a příjmení</td>
+					<td colspan="3"><input type="text" name="name" class="big" /></td>
+				</tr>
+				<tr>
+					<td>E-mail</td>
+					<td colspan="3"><input type="text" name="email" class="big" /></td>
 				</tr>
 
 				<!-- sumar -->
