@@ -6,213 +6,227 @@
 		<link rel="stylesheet" type="text/css" href="scanit_form.css" />
 		<script type="text/javascript" src="./jquery-1.10.2.min.js"></script>
 		<script type="text/javascript" src="./scanit_form.class.js"></script>
+		<script type="text/javascript" src="./tab_switcher.class.js"></script>
 		<script type="text/javascript" src="./scanit_form.js"></script>
   </head>
   <body>
 		<form id="scanit_form" action="" method="post">
-			<table class="order-form">
-				<tr>
-					<th colspan="4">Vaše negativy a diapozitivy</th>
-				</tr>
-				<tr>
-					<td>Vyberte rozlišení</td>
-					<td>ks</td>
-					<td>cena/ks</td>
-					<td>cena</td>
-				</tr>
+			<ul id="tab-switcher-bar">
+				<li><a href="#order-form">Objednávka</a></li>
+				<li><a href="#contact-form">Kontaktní údaje</a></li>
+			</ul>
 
-				<!-- 35mm film -->
-				<tr>
-					<td>
-						35 mm film
-						<select name="35_mm_dpi" class='dpi'>
-							<option value="1400">1400 dpi</option>
-							<option value="2700">2700 dpi</option>
-							<option value="4000">4000 dpi</option>
-						</select>
-					</td>
-					<td><input type="text" name="35_mm_pieces" class="pieces" id="35_mm" autocomplete="off" /></td>
-					<td><input type="text" name="35_mm_price_per_pieces" disabled="disabled" class="disabled" /></td>
-					<td><input type="text" name="35_mm_price_sum" disabled="disabled" class="sum disabled" /></td>
-				</tr>
+			<div class="tab" id="order-form">
+				<table class="order-form">
+					<tr>
+						<th colspan="4">Vaše negativy a diapozitivy</th>
+					</tr>
+					<tr>
+						<td>Vyberte rozlišení</td>
+						<td>ks</td>
+						<td>cena/ks</td>
+						<td>cena</td>
+					</tr>
 
-				<!-- svitkovy film -->
-				<tr>
-					<td>
-						Svitkový film
-						<select name="roll_dpi" class='dpi'>
-							<option value="1400">1400 dpi</option>
-							<option value="2700">2700 dpi</option>
-							<option value="4000">4000 dpi</option>
-						</select>
-						rozměr
-						<select name="size" class='size'>
-							<option value="6x4.5">6x4.5 cm</option>
-							<option value="6x6">6x6 cm</option>
-							<option value="6x7">6x7 cm</option>
-							<option value="6x8">6x8 cm</option>
-							<option value="6x9">6x9 cm</option>
-						</select>
-					</td>
-					<td><input type="text" name="roll_pieces" class="pieces" id="roll" autocomplete="off" /></td>
-					<td><input type="text" name="roll_price_per_pieces" disabled="disabled" class="disabled" /></td>
-					<td><input type="text" name="roll_price_sum" disabled="disabled" class="sum disabled" /></td>
-				</tr>
+					<!-- 35mm film -->
+					<tr>
+						<td>
+							35 mm film
+							<select name="35_mm_dpi" class='dpi'>
+								<option value="1400">1400 dpi</option>
+								<option value="2700">2700 dpi</option>
+								<option value="4000">4000 dpi</option>
+							</select>
+						</td>
+						<td><input type="text" name="35_mm_pieces" class="pieces" id="35_mm" autocomplete="off" /></td>
+						<td><input type="text" name="35_mm_price_per_pieces" disabled="disabled" class="disabled" /></td>
+						<td><input type="text" name="35_mm_price_sum" disabled="disabled" class="sum disabled" /></td>
+					</tr>
 
-				<!-- volitelne sluzby -->
-				<tr>
-					<th colspan="4">Volitelné služby</th>
-				</tr>
-				<tr>
-					<td>
-						<label for="glass_frame">Vyjmutí filmu ze skleněného rámečku</label>
-					</td>
-					<td><input type="text" name="glass_frame_pieces" class="pieces" id="glass_frame" autocomplete="off" /></td>
-					<td><input type="text" name="glass_frame_price_per_pieces" disabled="disabled" class="fix-price disabled" /></td>
-					<td><input type="text" name="glass_frame_price_sum" disabled="disabled" class="sum disabled" /></td>
-				</tr>
-				<tr>
-					<td>
-						<label for="48_bit_tiff">Skenování v barevné hloubce 48 bitů a uložení do TIFF</label>
-					</td>
-					<td><input type="text" name="48_bit_tiff_pieces" class="pieces" id="48_bit_tiff" autocomplete="off" /></td>
-					<td><input type="text" name="48_bit_tiff_price_per_pieces" disabled="disabled" class="fix-price disabled" /></td>
-					<td><input type="text" name="48_bit_tiff_price_sum" disabled="disabled" class="sum disabled" /></td>
-				</tr>
-				<tr>
-					<td>
-						<label for="dvd">Vytvoření další kopie DVD</label>
-					</td>
-					<td><input type="text" name="dvd_pieces" class="pieces" id="dvd" autocomplete="off" /></td>
-					<td><input type="text" name="dvd_price_per_pieces" disabled="disabled" class="fix-price disabled" /></td>
-					<td><input type="text" name="dvd_price_sum" disabled="disabled" class="sum disabled" /></td>
-				</tr>
-				<tr>
-					<td>
-						<label for="archive_dvd">Uložení na archivační DVD s životností 160 let</label>
-					</td>
-					<td><input type="text" name=archive_dvd_pieces" class="pieces" id="archive_dvd" autocomplete="off" /></td>
-					<td><input type="text" name="archive_dvd_price_per_pieces" disabled="disabled" class="fix-price disabled" /></td>
-					<td><input type="text" name="archive_dvd_price_sum" disabled="disabled" class="sum disabled" /></td>
-				</tr>
+					<!-- svitkovy film -->
+					<tr>
+						<td>
+							Svitkový film
+							<select name="roll_dpi" class='dpi'>
+								<option value="1400">1400 dpi</option>
+								<option value="2700">2700 dpi</option>
+								<option value="4000">4000 dpi</option>
+							</select>
+							rozměr
+							<select name="size" class='size'>
+								<option value="6x4.5">6x4.5 cm</option>
+								<option value="6x6">6x6 cm</option>
+								<option value="6x7">6x7 cm</option>
+								<option value="6x8">6x8 cm</option>
+								<option value="6x9">6x9 cm</option>
+							</select>
+						</td>
+						<td><input type="text" name="roll_pieces" class="pieces" id="roll" autocomplete="off" /></td>
+						<td><input type="text" name="roll_price_per_pieces" disabled="disabled" class="disabled" /></td>
+						<td><input type="text" name="roll_price_sum" disabled="disabled" class="sum disabled" /></td>
+					</tr>
 
-				<!-- jak dorucite zakazku -->
-				<tr>
-					<th colspan="4">Jak doručíte vaši zakázku k nám?</th>
-				</tr>
-				<tr>
-					<td>
-						<label for="transport_1_post">Poštou</label>
-					</td>
-					<td colspan="3">
-						<input type="radio" name="transport_1" value="post" checked="checked" id="transport_1_post" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label for="transport_1_manual">Osobní předání na provozovně Brno</label>
-					</td>
-					<td colspan="3">
-						<input type="radio" name="transport_1" value="manual" id="transport_1_manual" />
-					</td>
-				</tr>
+					<!-- volitelne sluzby -->
+					<tr>
+						<th colspan="4">Volitelné služby</th>
+					</tr>
+					<tr>
+						<td>
+							<label for="glass_frame">Vyjmutí filmu ze skleněného rámečku</label>
+						</td>
+						<td><input type="text" name="glass_frame_pieces" class="pieces" id="glass_frame" autocomplete="off" /></td>
+						<td><input type="text" name="glass_frame_price_per_pieces" disabled="disabled" class="fix-price disabled" /></td>
+						<td><input type="text" name="glass_frame_price_sum" disabled="disabled" class="sum disabled" /></td>
+					</tr>
+					<tr>
+						<td>
+							<label for="48_bit_tiff">Skenování v barevné hloubce 48 bitů a uložení do TIFF</label>
+						</td>
+						<td><input type="text" name="48_bit_tiff_pieces" class="pieces" id="48_bit_tiff" autocomplete="off" /></td>
+						<td><input type="text" name="48_bit_tiff_price_per_pieces" disabled="disabled" class="fix-price disabled" /></td>
+						<td><input type="text" name="48_bit_tiff_price_sum" disabled="disabled" class="sum disabled" /></td>
+					</tr>
+					<tr>
+						<td>
+							<label for="dvd">Vytvoření další kopie DVD</label>
+						</td>
+						<td><input type="text" name="dvd_pieces" class="pieces" id="dvd" autocomplete="off" /></td>
+						<td><input type="text" name="dvd_price_per_pieces" disabled="disabled" class="fix-price disabled" /></td>
+						<td><input type="text" name="dvd_price_sum" disabled="disabled" class="sum disabled" /></td>
+					</tr>
+					<tr>
+						<td>
+							<label for="archive_dvd">Uložení na archivační DVD s životností 160 let</label>
+						</td>
+						<td><input type="text" name="archive_dvd_pieces" class="pieces" id="archive_dvd" autocomplete="off" /></td>
+						<td><input type="text" name="archive_dvd_price_per_pieces" disabled="disabled" class="fix-price disabled" /></td>
+						<td><input type="text" name="archive_dvd_price_sum" disabled="disabled" class="sum disabled" /></td>
+					</tr>
 
-				<!-- jak prevezmete zakazku -->
-				<tr>
-					<th colspan="4">Jak si přejete převzít vaši hotovou zakázku?</th>
-				</tr>
-				<tr>
-					<td>
-						<label for="transport_2_post">Poštou</label>
-					</td>
-					<td colspan="2">
-						<input type="radio" name="transport_2" value="post" checked="checked" id="transport_2_post" />
-					</td>
-					<td>
-						<input type="text" name="transport_2_post_price_per_pieces" class="sum disabled radio-binding" itemid="transport_2_post" disabled="disabled" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label for="transport_2_manual">Osobní předání na provozovně Brno</label>
-					</td>
-					<td colspan="2">
-						<input type="radio" name="transport_2" value="manual" id="transport_2_manual" />
-					</td>
-					<td>
-						<input type="text" name="transport_2_manual_price_per_pieces" class="sum disabled radio-binding" itemid="transport_2_manual" disabled="disabled" />
-					</td>
-				</tr>
+					<!-- jak dorucite zakazku -->
+					<tr>
+						<th colspan="4">Jak doručíte vaši zakázku k nám?</th>
+					</tr>
+					<tr>
+						<td>
+							<label for="transport_1_post">Poštou</label>
+						</td>
+						<td colspan="3">
+							<input type="radio" name="transport_1" value="post" checked="checked" id="transport_1_post" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="transport_1_manual">Osobní předání na provozovně Brno</label>
+						</td>
+						<td colspan="3">
+							<input type="radio" name="transport_1" value="manual" id="transport_1_manual" />
+						</td>
+					</tr>
 
-				<!-- zpusob platby -->
-				<tr>
-					<th colspan="4">Vyberte způsob platby</th>
-				</tr>
-				<tr>
-					<td>
-						<label for="payment_cash">Platba při převzetí na provozovně</label>
-					</td>
-					<td colspan="2">
-						<input type="radio" name="payment" value="cash" checked="checked" id="payment_cash" />
-					</td>
-					<td>
-						<input type="text" name="payment_cash_price_per_pieces" class="sum disabled radio-binding" itemid="payment_cash" disabled="disabled" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label for="payment_on_delivery">Hotově dobírkou</label>
-					</td>
-					<td colspan="2">
-						<input type="radio" name="payment" value="on_delivery" id="payment_on_delivery" />
-					</td>
-					<td>
-						<input type="text" name="payment_on_delivery_price_per_pieces" class="sum disabled radio-binding" itemid="payment_on_delivery" disabled="disabled" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<label for="payment_transfer">Převodem a účet</label>
-					</td>
-					<td colspan="2">
-						<input type="radio" name="payment" value="transfer" id="payment_transfer" />
-					</td>
-					<td>
-						<input type="text" name="payment_transfer_price_per_pieces" class="sum disabled radio-binding" itemid="payment_transfer" disabled="disabled" />
-					</td>
-				</tr>
+					<!-- jak prevezmete zakazku -->
+					<tr>
+						<th colspan="4">Jak si přejete převzít vaši hotovou zakázku?</th>
+					</tr>
+					<tr>
+						<td>
+							<label for="transport_2_post">Poštou</label>
+						</td>
+						<td colspan="2">
+							<input type="radio" name="transport_2" value="post" checked="checked" id="transport_2_post" />
+						</td>
+						<td>
+							<input type="text" name="transport_2_post_price_per_pieces" class="sum disabled radio-binding" itemid="transport_2_post" disabled="disabled" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="transport_2_manual">Osobní předání na provozovně Brno</label>
+						</td>
+						<td colspan="2">
+							<input type="radio" name="transport_2" value="manual" id="transport_2_manual" />
+						</td>
+						<td>
+							<input type="text" name="transport_2_manual_price_per_pieces" class="sum disabled radio-binding" itemid="transport_2_manual" disabled="disabled" />
+						</td>
+					</tr>
 
-				<!-- kontakt -->
-				<tr>
-					<td colspan="4"><hr /></td>
-				</tr>
-				<tr>
-					<th colspan="4">Kontaktní údaje</th>
-				</tr>
-				<tr>
-					<td>Jméno a příjmení</td>
-					<td colspan="3"><input type="text" name="name" class="big" /></td>
-				</tr>
-				<tr>
-					<td>E-mail</td>
-					<td colspan="3"><input type="text" name="email" class="big" /></td>
-				</tr>
+					<!-- zpusob platby -->
+					<tr>
+						<th colspan="4">Vyberte způsob platby</th>
+					</tr>
+					<tr>
+						<td>
+							<label for="payment_cash">Platba při převzetí na provozovně</label>
+						</td>
+						<td colspan="2">
+							<input type="radio" name="payment" value="cash" checked="checked" id="payment_cash" />
+						</td>
+						<td>
+							<input type="text" name="payment_cash_price_per_pieces" class="sum disabled radio-binding" itemid="payment_cash" disabled="disabled" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="payment_on_delivery">Hotově dobírkou</label>
+						</td>
+						<td colspan="2">
+							<input type="radio" name="payment" value="on_delivery" id="payment_on_delivery" />
+						</td>
+						<td>
+							<input type="text" name="payment_on_delivery_price_per_pieces" class="sum disabled radio-binding" itemid="payment_on_delivery" disabled="disabled" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label for="payment_transfer">Převodem a účet</label>
+						</td>
+						<td colspan="2">
+							<input type="radio" name="payment" value="transfer" id="payment_transfer" />
+						</td>
+						<td>
+							<input type="text" name="payment_transfer_price_per_pieces" class="sum disabled radio-binding" itemid="payment_transfer" disabled="disabled" />
+						</td>
+					</tr>
 
-				<!-- sumar -->
-				<tr>
-					<td colspan="4"><hr /></td>
-				</tr>
-				<tr>
-					<td>
-						Objednávka celkem...
-					</td>
-					<td colspan="3">
-						<input type="text" disabled="disabled" name="sum_all" id="sum_all" class="disabled" />
-						<br />
-						<input type="submit" value="Objednat" />
-					</td>
-				</tr>
-			</table>
+					<!-- kontakt -->
+					<tr>
+						<td colspan="4"><hr /></td>
+					</tr>
+					<tr>
+						<th colspan="4">Kontaktní údaje</th>
+					</tr>
+					<tr>
+						<td>Jméno a příjmení</td>
+						<td colspan="3"><input type="text" name="name" class="big" /></td>
+					</tr>
+					<tr>
+						<td>E-mail</td>
+						<td colspan="3"><input type="text" name="email" class="big" /></td>
+					</tr>
+
+					<!-- sumar -->
+					<tr>
+						<td colspan="4"><hr /></td>
+					</tr>
+					<tr>
+						<td>
+							Objednávka celkem...
+						</td>
+						<td colspan="3">
+							<input type="text" disabled="disabled" name="sum_all" id="sum_all" class="disabled" />
+							<br />
+							<input type="submit" value="Další" class="tab-switcher" itemid="contact-form" />
+						</td>
+					</tr>
+				</table>
+			</div>
+
+
+			<div class="tab" id="contact-form">
+				<input type="submit" value="Zpět" class="tab-switcher" itemid="order-form" />
+				<input type="submit" value="Objednat" class="order" />
+			</div>
 		</form>
   </body>
 </html>

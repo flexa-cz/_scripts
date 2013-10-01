@@ -18,7 +18,7 @@ function ScanitForm(_php_script_address){
 		form.find('input[type=radio]').click(function(){
 			self.calculatePrices();
 		});
-		form.find('input[type=submit]').click(function(event){
+		form.find('input[type=submit].order').click(function(event){
 			event.stopPropagation();
 			event.preventDefault();
 			self.submit();
