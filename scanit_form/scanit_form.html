@@ -12,11 +12,11 @@
   <body>
 		<form id="scanit_form" action="" method="post">
 			<ul id="tab-switcher-bar">
-				<li><a href="#order-form">Objednávka</a></li>
+				<li><a href="#order-form" class="active">Objednávka</a></li>
 				<li><a href="#contact-form">Kontaktní údaje</a></li>
 			</ul>
 
-			<div class="tab" id="order-form">
+			<div class="tab active" id="order-form">
 				<table class="order-form">
 					<tr>
 						<th colspan="4">Vaše negativy a diapozitivy</th>
@@ -38,7 +38,7 @@
 								<option value="4000">4000 dpi</option>
 							</select>
 						</td>
-						<td><input type="text" name="35_mm_pieces" class="pieces" id="35_mm" autocomplete="off" /></td>
+						<td><input type="text" name="35_mm_pieces" class="pieces" id="35_mm" autocomplete="off" pattern="[0-9]*" /></td>
 						<td><input type="text" name="35_mm_price_per_pieces" disabled="disabled" class="disabled" /></td>
 						<td><input type="text" name="35_mm_price_sum" disabled="disabled" class="sum disabled" /></td>
 					</tr>
@@ -61,7 +61,7 @@
 								<option value="6x9">6x9 cm</option>
 							</select>
 						</td>
-						<td><input type="text" name="roll_pieces" class="pieces" id="roll" autocomplete="off" /></td>
+						<td><input type="text" name="roll_pieces" class="pieces" id="roll" autocomplete="off" pattern="[0-9]*" /></td>
 						<td><input type="text" name="roll_price_per_pieces" disabled="disabled" class="disabled" /></td>
 						<td><input type="text" name="roll_price_sum" disabled="disabled" class="sum disabled" /></td>
 					</tr>
@@ -74,7 +74,7 @@
 						<td>
 							<label for="glass_frame">Vyjmutí filmu ze skleněného rámečku</label>
 						</td>
-						<td><input type="text" name="glass_frame_pieces" class="pieces" id="glass_frame" autocomplete="off" /></td>
+						<td><input type="text" name="glass_frame_pieces" class="pieces" id="glass_frame" autocomplete="off" pattern="[0-9]*" /></td>
 						<td><input type="text" name="glass_frame_price_per_pieces" disabled="disabled" class="fix-price disabled" /></td>
 						<td><input type="text" name="glass_frame_price_sum" disabled="disabled" class="sum disabled" /></td>
 					</tr>
@@ -82,7 +82,7 @@
 						<td>
 							<label for="48_bit_tiff">Skenování v barevné hloubce 48 bitů a uložení do TIFF</label>
 						</td>
-						<td><input type="text" name="48_bit_tiff_pieces" class="pieces" id="48_bit_tiff" autocomplete="off" /></td>
+						<td><input type="text" name="48_bit_tiff_pieces" class="pieces" id="48_bit_tiff" autocomplete="off" pattern="[0-9]*" /></td>
 						<td><input type="text" name="48_bit_tiff_price_per_pieces" disabled="disabled" class="fix-price disabled" /></td>
 						<td><input type="text" name="48_bit_tiff_price_sum" disabled="disabled" class="sum disabled" /></td>
 					</tr>
@@ -90,7 +90,7 @@
 						<td>
 							<label for="dvd">Vytvoření další kopie DVD</label>
 						</td>
-						<td><input type="text" name="dvd_pieces" class="pieces" id="dvd" autocomplete="off" /></td>
+						<td><input type="text" name="dvd_pieces" class="pieces" id="dvd" autocomplete="off" pattern="[0-9]*" /></td>
 						<td><input type="text" name="dvd_price_per_pieces" disabled="disabled" class="fix-price disabled" /></td>
 						<td><input type="text" name="dvd_price_sum" disabled="disabled" class="sum disabled" /></td>
 					</tr>
@@ -98,7 +98,7 @@
 						<td>
 							<label for="archive_dvd">Uložení na archivační DVD s životností 160 let</label>
 						</td>
-						<td><input type="text" name="archive_dvd_pieces" class="pieces" id="archive_dvd" autocomplete="off" /></td>
+						<td><input type="text" name="archive_dvd_pieces" class="pieces" id="archive_dvd" autocomplete="off" pattern="[0-9]*" /></td>
 						<td><input type="text" name="archive_dvd_price_per_pieces" disabled="disabled" class="fix-price disabled" /></td>
 						<td><input type="text" name="archive_dvd_price_sum" disabled="disabled" class="sum disabled" /></td>
 					</tr>
@@ -188,34 +188,34 @@
 							<input type="text" name="payment_transfer_price_per_pieces" class="sum disabled radio-binding" itemid="payment_transfer" disabled="disabled" />
 						</td>
 					</tr>
+					<tr>
+						<td colspan="4">
+							(Po obdržení Vašich materiálů Vám pošleme e-mail s variabilním symbolem pro zaplacení.
+							Platbu můžete provést pohodlně z domova pomocí internetového bankovnictví.)
+						</td>
+					</tr>
 
-					<!-- kontakt -->
-					<tr>
-						<td colspan="4"><hr /></td>
-					</tr>
-					<tr>
-						<th colspan="4">Kontaktní údaje</th>
-					</tr>
-					<tr>
-						<td>Jméno a příjmení</td>
-						<td colspan="3"><input type="text" name="name" class="big" /></td>
-					</tr>
-					<tr>
-						<td>E-mail</td>
-						<td colspan="3"><input type="text" name="email" class="big" /></td>
-					</tr>
 
 					<!-- sumar -->
 					<tr>
 						<td colspan="4"><hr /></td>
 					</tr>
 					<tr>
-						<td>
-							Objednávka celkem...
-						</td>
+						<th class="no-padding">
+							Objednávka celkem
+						</th>
 						<td colspan="3">
 							<input type="text" disabled="disabled" name="sum_all" id="sum_all" class="disabled" />
-							<br />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							Pokud si přejete pokračovat ve vaší objednávce<br />
+							kliknětena tlačítko "Další" a vyplňte <br />
+							kontaktní údaje. Na vaši emailovou adresu <br />
+							obdržíte potvrzení objednávky.
+						</td>
+						<td colspan="3">
 							<input type="submit" value="Další" class="tab-switcher" itemid="contact-form" />
 						</td>
 					</tr>
@@ -224,8 +224,114 @@
 
 
 			<div class="tab" id="contact-form">
-				<input type="submit" value="Zpět" class="tab-switcher" itemid="order-form" />
-				<input type="submit" value="Objednat" class="order" />
+				<table class="order-form">
+					<tr>
+						<th colspan="2">Kontaktní údaje</th>
+					</tr>
+					<tr>
+						<td><label for="name">Jméno</label></td>
+						<td><input type="text" name="name" id="name" class="bigest" /></td>
+					</tr>
+					<tr>
+						<td><label for="surname">Příjmení</label></td>
+						<td><input type="text" name="surname" id="surname" class="bigest" /></td>
+					</tr>
+					<tr>
+						<td><label for="email">E-mail</label></td>
+						<td><input type="text" name="email" id="email" class="bigest" /></td>
+					</tr>
+					<tr>
+						<td><label for="phone">Telefon</label></td>
+						<td><input type="text" name="phone" id="phone" class="bigest" /></td>
+					</tr>
+					<tr>
+						<td colspan="2"><hr/></td>
+					</tr>
+					<tr>
+						<th colspan="2">Fakturační údaje</th>
+					</tr>
+					<tr>
+						<td></td>
+						<td>
+							<input type="radio" name="person_firm" id="person" value="person" checked="checked" /><label for="person" class="radio">Fyzická osoba</label><br />
+							<input type="radio" name="person_firm" id="firm" value="firm" /><label for="firm" class="radio">Firma</label>
+						</td>
+					</tr>
+					<tr>
+						<td><label for="invoice_name">Jméno</label></td>
+						<td><input type="text" name="invoice[name]" id="invoice_name" class="bigest" /></td>
+					</tr>
+					<tr>
+						<td><label for="invoice_surname">Příjmení</label></td>
+						<td><input type="text" name="invoice[surname]" id="invoice_surname" class="bigest" /></td>
+					</tr>
+					<tr>
+						<td><label for="invoice_street">Ulice</label></td>
+						<td><input type="text" name="invoice[street]" id="invoice_street" class="bigest" /></td>
+					</tr>
+					<tr>
+						<td><label for="invoice_city">Město</label></td>
+						<td><input type="text" name="invoice[city]" id="invoice_city" class="bigest" /></td>
+					</tr>
+					<tr>
+						<td><label for="invoice_postal_code">PSČ</label></td>
+						<td><input type="text" name="invoice[postal_code]" id="invoice_postal_code" class="big" /></td>
+					</tr>
+
+
+
+					<tr>
+						<td colspan="2"><hr/></td>
+					</tr>
+					<tr>
+						<th colspan="2">Doručovací adresa</th>
+					</tr>
+					<tr>
+						<td colspan="2">(Vyplňte v případě, že je doručovací adresa jiná, než fakturační.)</td>
+					</tr>
+					<tr>
+						<td><label for="address_name">Jméno</label></td>
+						<td><input type="text" name="address[name]" id="address_name" class="bigest" /></td>
+					</tr>
+					<tr>
+						<td><label for="address_surname">Příjmení</label></td>
+						<td><input type="text" name="address[surname]" id="address_surname" class="bigest" /></td>
+					</tr>
+					<tr>
+						<td><label for="address_street">Ulice</label></td>
+						<td><input type="text" name="address[street]" id="address_street" class="bigest" /></td>
+					</tr>
+					<tr>
+						<td><label for="address_city">Město</label></td>
+						<td><input type="text" name="address[city]" id="address_city" class="bigest" /></td>
+					</tr>
+					<tr>
+						<td><label for="address_postal_code">PSČ</label></td>
+						<td><input type="text" name="address[postal_code]" id="address_postal_code" class="big" /></td>
+					</tr>
+
+
+
+					<tr>
+						<td colspan="2"><hr/></td>
+					</tr>
+					<tr>
+						<th colspan="2">Doplňující údaje k objednávce</th>
+					</tr>
+					<tr>
+						<td colspan="2"><textarea name="supplement" cols="20" rows="5"></textarea></td>
+					</tr>
+
+
+					<tr>
+						<td>
+							<input type="submit" value="Zpět" class="tab-switcher" itemid="order-form" />
+						</td>
+						<td>
+							<input type="submit" value="Objednat" class="order" />
+						</td>
+					</tr>
+				</table>
 			</div>
 		</form>
   </body>

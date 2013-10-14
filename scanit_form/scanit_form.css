@@ -1,13 +1,26 @@
-#scanit_form{font-family: Helvetica, Arial, sans-serif; font-size: 11pt; background: #E2E3E4; padding: 1em;}
+#scanit_form{font-family: Helvetica, Arial, sans-serif; font-size: 9pt; background: #000; padding: 1em; color: #999;}
 #scanit_form input[type='text']{width: 50px;}
-#scanit_form th{text-align: left; color: #ED1C24; font-size: 120%; padding: 1em .1em .1em .1em;}
+#scanit_form table{width: 100%;}
+#scanit_form th{text-align: left; font-size: 120%; padding: 1em .1em .1em .1em; color: #ccc; text-transform: uppercase; font-weight: normal; font-size: 10pt;}
+#scanit_form th.no-padding{padding: 0;}
 #scanit_form td{padding: .3em .1em .1em .1em; vertical-align: top;}
-#scanit_form input[type='text']{border: 1px solid #939598; padding: .1em; background: white; color: black; width: 50px;}
-#scanit_form input.disabled{border: none; color: #666;}
-#scanit_form select{border: none; background: #ED1C24; color: white; padding: .1em;}
+#scanit_form input[type='text'], textarea{border: 1px solid #939598; padding: .1em; background: #d1d3d4; color: black; width: 50px;}
+textarea{width: 100%; height: 150px; font-family: Helvetica, Arial, sans-serif; font-size: 9pt;}
+#scanit_form input.disabled{border: 1px solid white; background: #000; color: white;}
+#scanit_form input.error{border: 1px solid red; background-color: #fba;}
+#scanit_form select{border: none; background: #882346; color: white; padding: .1em;}
 #scanit_form input#sum_all{float: right;}
-#scanit_form label{width: 100%; display: block;}
-#scanit_form input[type='submit']{background: #ED1C24; color: white; margin: 1em 0 0 0; padding: .5em; border: none; text-align: center; width: 100%;}
-#scanit_form hr{display: block; margin: 1em 0; border-top: 1px solid #939598;}
+#scanit_form label{width: 100%; display: block; min-width: 150px;}
+#scanit_form label.radio{width: auto; display: inline;}
+#scanit_form input[type='submit']{background: #882346; color: white; margin: 1em 0 0 0; padding: .5em; border: none; text-align: center; width: 100%; cursor: hand; cursor: pointer;}
+#scanit_form hr{display: block; margin: 1em 0; border: none; border-top: 1px solid #999;}
 #scanit_form p.error{border: 1px solid red; background: #ffc; color: red; font-size: 12pt; padding: 1em; margin: 1em;}
 #scanit_form input[type=text].big{width: 170px;}
+#scanit_form input[type=text].bigest{width: 340px;}
+#scanit_form div.tab{clear: both; padding: 1em;}
+
+#scanit_form ul#tab-switcher-bar{display: block; margin: 0; padding: 0; height: 30px; width: 100%; border-bottom: 1px solid #999;}
+#scanit_form ul#tab-switcher-bar li{display: block; float: left; margin: 0 0 0 5px; padding: 0;}
+#scanit_form ul#tab-switcher-bar a{display: block; height: 29px; line-height: 30px; padding: 0 20px; color: #ccc; text-decoration: none; border: 1px solid #666; border-bottom: 1px solid #999; border-top-left-radius: 10px; border-top-right-radius: 10px; background: #333; text-transform: uppercase; font-size: 10pt; outline: none;}
+#scanit_form ul#tab-switcher-bar a.active, #scanit_form ul#tab-switcher-bar a:hover{border-color: #999; border-bottom: 1px solid black; background: black; color: #999;}
+#scanit_form ul#tab-switcher-bar a.active{color: #882346;}

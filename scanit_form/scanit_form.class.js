@@ -56,14 +56,14 @@ function ScanitForm(_php_script_address){
 		return self;
 	};
 
-	this.showError=function(){
-		console.warn('PHP server is unavailable!');
-		form.prepend('<p class="error">Omlouváme se, ale momentálně je objednávkový systém mimo provoz.<br /> Zkuste to prosím později, nebo nám zašlete e-mail.</p>');
+	this.showError=function(error){
+		form.prepend('<p class="error">'+error+'</p>');
 		return self;
 	};
 
 	this.removeError=function(){
 		form.children('p.error').remove();
+		return self;
 	};
 
 	this.removeTable=function(){
@@ -135,8 +135,13 @@ function ScanitForm(_php_script_address){
 		return price_per_pieces;
 	};
 
+	this.removeErrorClass=function(){
+		$('input.error').removeClass('error');
+		return self;
+	};
+
 	this.submit=function(){
-		self.calculatePrices().removeError();
+		self.calculatePrices().removeError().removeErrorClass();
 		var post_data=form.serialize();
     $.ajax({
 			type: 'post',
@@ -144,15 +149,19 @@ function ScanitForm(_php_script_address){
     	data: post_data,
 			dataType: 'json'
     }).done(function(data){
-			console.log(data);
 			if(data['error']){
-//				alert('odeslani se nezdarilo');
+				self.showError(data['report']);
+				for(var index in data['input_name']){
+					var input_name=data['input_name'][index];
+					$('input[name='+input_name+']').addClass('error');
+				}
 			}
 			else{
 //				alert('bylo odeslano');
 			}
 		}).error(function(){
-			self.showError();
+			console.warn('PHP server is unavailable!');
+			self.showError('Omlouváme se, ale momentálně je objednávkový systém mimo provoz.<br /> Zkuste to prosím později, nebo nám zašlete e-mail.');
 		});
 		return self;
 	};

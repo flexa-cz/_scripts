@@ -33,8 +33,12 @@ function TabSwitcher(){
 	};
 
 	this.showTabById=function(id){
-		self.hideAll();
-		$('div#'+id).show(effect_speed);
+		var div=$('div#'+id);
+		if(!div.hasClass('active')){
+			self.hideAll();
+			div.show(effect_speed).addClass('active');
+			$('ul#tab-switcher-bar a[itemid='+id+']').addClass('active');
+		}
 		return self;
 	};
 
@@ -54,7 +58,8 @@ function TabSwitcher(){
 		bar.children('li').children('a').each(function(){
 			var id=$(this).attr('itemid');
 			$(this).parent('li').removeClass('active');
-			$('div#'+id).hide(effect_speed);
+			$('div#'+id).hide(effect_speed).removeClass('active');
+			$('ul#tab-switcher-bar a').removeClass('active');
 		});
 		return self;
 	};
