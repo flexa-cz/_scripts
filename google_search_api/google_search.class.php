@@ -51,7 +51,7 @@ class GoogleSearch{
 				}
 			}
 		}
-		
+
 		return $this->getFilteredResultsStatistics();
 	}
 
@@ -110,7 +110,7 @@ class GoogleSearch{
 							'count'=>1,
 							'url'=>$result->url,
 							'title'=>$result->titleNoFormatting,
-							'format'=>(!empty($result->fileFormat) ? $result->fileFormat : 'text/html'),
+							'mimetype'=>(!empty($result->fileFormat) ? $result->fileFormat : 'text/html'),
 					);
 				}
 				else{

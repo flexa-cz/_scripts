@@ -1,0 +1,76 @@
+Číslo,Datum,Začátek,Konec,Doba trvání,Projekt,Popis,Přestávky,Štítky
+19,1. listopadu 2013,7:30,12:24,4.9,VŠOH,Plagiáty,0.0,Vývoj
+19,1. listopadu 2013,12:48,16:19,3.52,VŠOH,Plagiáty,0.0,Vývoj
+20,3. listopadu 2013,16:03,19:10,3.12,VŠOH,Plagiáty,0.0,Vývoj
+20,3. listopadu 2013,20:41,0:24,3.72,VŠOH,Plagiáty,0.0,Vývoj
+21,4. listopadu 2013,7:05,12:28,5.38,VŠOH,Plagiáty,0.0,Vývoj
+21,4. listopadu 2013,12:44,15:51,3.12,VŠOH,Plagiáty,0.0,Vývoj
+22,5. listopadu 2013,7:10,12:17,5.12,Stag,Unikátní shortname,0.0,Vývoj
+22,5. listopadu 2013,12:30,15:37,3.12,Stag,Unikátní shortname,0.0,Vývoj
+23,6. listopadu 2013,7:08,7:31,0.38,Stag,Shortname,0.0,Vývoj
+51,6. listopadu 2013,7:31,8:30,0.98,Oriflame,Opravy,0.0,Vývoj
+4,6. listopadu 2013,8:30,11:49,3.32,Proefes - Muni,Drill,0.0,Vývoj
+4,6. listopadu 2013,12:14,14:23,2.15,Proefes - Muni,Drill,0.0,Vývoj
+52,6. listopadu 2013,14:23,15:16,0.88,Oriflame,Auth Oriflame,0.0,"Porada, Vývoj"
+5,6. listopadu 2013,15:16,16:49,1.55,Proefes - Muni,"Drill, traverzování",0.0,Vývoj
+6,7. listopadu 2013,7:00,11:10,4.17,Proefes - Muni,Traverzování,0.0,Vývoj
+24,7. listopadu 2013,11:10,12:12,1.03,Stag,Opravy v editaci stag id,0.0,Vývoj
+24,7. listopadu 2013,12:36,13:03,0.45,Stag,Opravy v editaci stag id,0.0,Vývoj
+7,7. listopadu 2013,13:03,16:00,2.95,Proefes - Muni,Traverzování,0.0,Vývoj
+25,7. listopadu 2013,16:00,17:15,1.25,Stag,Stag id,0.0,Vývoj
+26,8. listopadu 2013,6:39,8:46,2.12,Stag,Stag id,0.0,
+26,8. listopadu 2013,8:57,9:11,0.23,Stag,Stag id,0.0,
+26,8. listopadu 2013,10:51,14:11,3.33,Stag,Stag id,0.0,
+26,8. listopadu 2013,14:27,15:06,0.65,Stag,Stag id,0.0,
+108,8. listopadu 2013,15:08,16:01,0.88,UNIV 3,Dph dokument 3.1,0.0,Vývoj
+27,8. listopadu 2013,16:02,16:26,0.4,Stag,Course duplicity,0.0,Vývoj
+28,11. listopadu 2013,7:07,10:10,3.05,Stag,Stag id - ladění IE,0.0,Vývoj
+8,11. listopadu 2013,10:11,11:54,1.72,Proefes - Muni,Drill,0.0,Vývoj
+8,11. listopadu 2013,12:15,15:45,3.5,Proefes - Muni,Drill,0.0,Vývoj
+9,12. listopadu 2013,6:57,8:17,1.33,Proefes - Muni,Drill,0.0,Porada
+22,12. listopadu 2013,8:17,10:26,2.15,VŠOH,Plagiáty nasazení,0.0,"Testování, Vývoj"
+10,12. listopadu 2013,10:26,11:31,1.08,Proefes - Muni,Drill správa kategorií,0.0,Vývoj
+53,12. listopadu 2013,11:31,11:43,0.2,Oriflame,Chyba s načtením,0.0,"Testování, Vývoj"
+53,12. listopadu 2013,11:59,12:36,0.62,Oriflame,Chyba s načtením,0.0,"Testování, Vývoj"
+11,12. listopadu 2013,12:36,14:45,2.15,Proefes - Muni,Drill kategorie,0.0,Vývoj
+54,12. listopadu 2013,14:45,15:25,0.67,Oriflame,Iframe,0.0,Testování
+55,13. listopadu 2013,6:59,11:50,4.85,Oriflame,Oprava Scorm,0.0,"Testování, Vývoj"
+55,13. listopadu 2013,12:08,13:27,1.32,Oriflame,Oprava Scorm,0.0,"Testování, Vývoj"
+12,13. listopadu 2013,13:27,16:32,3.08,Proefes - Muni,Drill,0.0,Vývoj
+13,14. listopadu 2013,7:02,13:10,6.13,Proefes - Muni,Drill kategorie,0.0,Vývoj
+13,14. listopadu 2013,13:27,16:45,3.3,Proefes - Muni,Drill kategorie,0.0,Vývoj
+14,15. listopadu 2013,7:10,12:06,4.93,Proefes - Muni,"Drill kategorie, otázky",0.0,Vývoj
+14,15. listopadu 2013,12:30,16:50,4.33,Proefes - Muni,"Drill kategorie, otázky",0.0,Vývoj
+15,18. listopadu 2013,7:09,9:24,2.25,Proefes - Muni,Otázky,0.0,Vývoj
+56,18. listopadu 2013,9:25,10:45,1.33,Oriflame,"Skype, oprava",0.0,"Porada, Vývoj"
+16,18. listopadu 2013,10:46,11:20,0.57,Proefes - Muni,Otázky,0.0,Vývoj
+57,18. listopadu 2013,11:21,11:44,0.38,Oriflame,Auth,0.0,"Testování, Vývoj"
+57,18. listopadu 2013,12:17,13:06,0.82,Oriflame,Auth,0.0,"Testování, Vývoj"
+17,18. listopadu 2013,13:06,17:15,4.15,Proefes - Muni,Otázky,0.0,Vývoj
+18,19. listopadu 2013,7:37,12:17,4.67,Proefes - Muni,Drill otázky,0.0,"Porada, Vývoj"
+18,19. listopadu 2013,12:43,15:38,2.92,Proefes - Muni,Drill otázky,0.0,"Porada, Vývoj"
+19,20. listopadu 2013,7:05,13:12,6.12,Proefes - Muni,"Otázky, mod drill",0.0,Vývoj
+19,20. listopadu 2013,13:28,16:25,2.95,Proefes - Muni,"Otázky, mod drill",0.0,Vývoj
+20,21. listopadu 2013,7:07,13:00,5.88,Proefes - Muni,Kategorie,0.0,Vývoj
+20,21. listopadu 2013,13:26,17:23,3.95,Proefes - Muni,Kategorie,0.0,Vývoj
+21,22. listopadu 2013,7:10,13:18,6.13,Proefes - Muni,Drill student,0.0,Vývoj
+21,22. listopadu 2013,13:43,15:41,1.97,Proefes - Muni,Drill student,0.0,Vývoj
+22,25. listopadu 2013,6:51,11:52,5.02,Proefes - Muni,Drill student,0.0,Vývoj
+22,25. listopadu 2013,12:13,16:30,4.28,Proefes - Muni,Drill student,0.0,Vývoj
+23,26. listopadu 2013,7:16,12:09,4.88,Proefes - Muni,Drill student,0.0,Vývoj
+23,26. listopadu 2013,12:31,15:45,3.23,Proefes - Muni,Drill student,0.0,Vývoj
+24,27. listopadu 2013,7:10,11:52,4.7,Proefes - Muni,Drill student,0.0,Vývoj
+24,27. listopadu 2013,12:28,12:30,0.03,Proefes - Muni,Drill student,0.0,Vývoj
+58,27. listopadu 2013,12:30,13:37,1.12,Oriflame,Scorm menu,0.0,Vývoj
+25,27. listopadu 2013,13:38,16:51,3.22,Proefes - Muni,Drill vyhodnocení,0.0,Vývoj
+26,28. listopadu 2013,8:17,10:30,2.22,Proefes - Muni,Drill student,0.0,Vývoj
+59,28. listopadu 2013,10:30,10:56,0.43,Oriflame,Migrace dat,0.0,Porada
+27,28. listopadu 2013,10:56,13:29,2.55,Proefes - Muni,Drill student vyhodnocení,0.0,Vývoj
+27,28. listopadu 2013,13:51,13:54,0.05,Proefes - Muni,Drill student vyhodnocení,0.0,Vývoj
+60,28. listopadu 2013,13:55,14:57,1.03,Oriflame,Skype,0.0,Porada
+28,28. listopadu 2013,20:53,21:25,0.53,Proefes - Muni,Drill,0.0,Vývoj
+28,28. listopadu 2013,22:33,22:52,0.32,Proefes - Muni,Drill,0.0,Vývoj
+29,29. listopadu 2013,6:55,14:01,7.1,Proefes - Muni,Drill,0.0,Vývoj
+29,29. listopadu 2013,14:17,14:30,0.22,Proefes - Muni,Drill,0.0,Vývoj
+61,29. listopadu 2013,14:30,15:14,0.73,Oriflame,Migrace dat,0.0,"Analýza, Porada"
+30,29. listopadu 2013,15:14,15:46,0.53,Proefes - Muni,Drill,0.0,Vývoj
