@@ -20,18 +20,21 @@ class TimesheetToExcel extends ImportCsv{
 		if($date!==$this->last_date && !empty($this->row_data)){
 			$this->printRow();
 		}
-		$str=$data[5].' - '.$data[6];
+		$str=$data[6].' ('.$data[5].')';
 		if(!$this->row_data){
 			$this->row_data['date']=$date;
 			$this->row_data['from']=$data[2];
 			$this->row_data['to']=$data[3];
-			$this->row_data['text']=array($str);
+			$this->row_data['text']=array($str=>(float)$data[4]);
 			$this->row_data['hours']=(float)$data[4];
 		}
 		else{
 			$this->row_data['to']=$data[3];
-			if(!in_array($str, $this->row_data['text'])){
-				$this->row_data['text'][]=$str;
+			if(!isset($this->row_data['text'][$str])){
+				$this->row_data['text'][$str]=(float)$data[4];
+			}
+			else{
+				$this->row_data['text'][$str]+=(float)$data[4];
 			}
 			$this->row_data['hours']+=(float)$data[4];
 		}
@@ -40,11 +43,20 @@ class TimesheetToExcel extends ImportCsv{
 	}
 
 	private function printRow(){
+		$arr=array();
+		foreach($this->row_data['text'] as $text => $time){
+			if(count($this->row_data['text'])===1){
+				$arr[]=$text;
+			}
+			else{
+				$arr[]=$text.' ['.$this->getFloatToTime($time).']';
+			}
+		}
 		echo '<tr>';
 		echo '<td>'.$this->row_data['date'].'</td>';
 		echo '<td>'.$this->row_data['from'].'</td>';
 		echo '<td>'.$this->row_data['to'].'</td>';
-		echo '<td>'.implode('<br>',$this->row_data['text']).'</td>';
+		echo '<td>'.implode('<br>',$arr).'</td>';
 		echo '<td>'.$this->getFloatToTime($this->row_data['hours']).'</td>';
 		echo '</tr>';
 
