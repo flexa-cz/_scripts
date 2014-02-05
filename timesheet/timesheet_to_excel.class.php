@@ -94,7 +94,8 @@ class TimesheetToExcel extends ImportCsv{
 	 * @return string
 	 */
 	private function getFloatToTime($float){
-		list($hours,$min_str)=explode('.',(string)$float);
+		$float=(string)(strpos($float, '.')===false ? $float.'.0' : $float);
+		list($hours,$min_str)=explode('.',$float);
 		$min_float=(float)('0.'.$min_str);
 		$minutes=round(60*$min_float);
 		return str_pad($hours, 2,'0',STR_PAD_LEFT).':'.(strlen($minutes)<2 ? str_pad($minutes, 2, '0', STR_PAD_LEFT) : substr($minutes, 0, 2));
