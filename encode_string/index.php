@@ -21,7 +21,7 @@
 			<input type="submit" />
 		</form>
 <?php
-if(isset($_POST)){
+if(!empty($_POST)){
 	echo '<table>';
 	echo '<tr><th>plain</th><td>'.$_POST['string'].'</td></tr>';
 	echo '<tr><th>MD5</th><td>'.md5($_POST['string']).'</td></tr>';

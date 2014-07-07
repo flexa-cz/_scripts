@@ -1,81 +1,64 @@
-Číslo,Datum,Začátek,Konec,Doba trvání,Projekt,Popis,Přestávky,Štítky
-47,2. ledna 2014,16:48,17:24,0.6,Proefes - Muni,Import/export,0.0,Vývoj
-47,2. ledna 2014,17:29,17:48,0.32,Proefes - Muni,Import/export,0.0,Vývoj
-47,2. ledna 2014,18:09,18:19,0.17,Proefes - Muni,Import/export,0.0,Vývoj
-9,6. ledna 2014,7:05,7:43,0.63,Porady,Novinky v organizaci práce,0.0,Porada
-48,6. ledna 2014,7:43,9:40,1.95,Proefes - Muni,Drill import/export,0.0,Vývoj
-23,6. ledna 2014,9:41,10:12,0.52,VŠOH,Plagiáty,0.0,"Testování, Vývoj"
-49,6. ledna 2014,10:12,11:15,1.05,Proefes - Muni,Drill import/export,0.0,Vývoj
-24,6. ledna 2014,11:15,12:03,0.8,VŠOH,Plagiáty,0.0,"Testování, Vývoj"
-50,6. ledna 2014,12:03,12:43,0.67,Proefes - Muni,Drill import/export,0.0,Vývoj
-25,6. ledna 2014,12:44,13:08,0.4,VŠOH,Plagiáty,0.0,"Testování, Vývoj"
-51,6. ledna 2014,13:09,13:13,0.07,Proefes - Muni,Drill import,0.0,Vývoj
-51,6. ledna 2014,13:39,15:47,2.13,Proefes - Muni,Drill import,0.0,Vývoj
-52,7. ledna 2014,7:07,11:01,3.9,Proefes - Muni,Drill opravy,0.0,Vývoj
-71,7. ledna 2014,11:02,13:07,2.08,Oriflame,Ie problém,0.0,Testování
-71,7. ledna 2014,13:37,14:05,0.47,Oriflame,Ie problém,0.0,Testování
-53,7. ledna 2014,14:06,15:37,1.52,Proefes - Muni,Drill opravy,0.0,Vývoj
-54,8. ledna 2014,7:09,7:40,0.52,Proefes - Muni,Drill,0.0,Vývoj
-72,8. ledna 2014,7:40,8:56,1.27,Oriflame,Scorm,0.0,Testování
-55,8. ledna 2014,8:56,12:04,3.13,Proefes - Muni,Drill,0.0,Vývoj
-73,8. ledna 2014,12:23,13:47,1.4,Oriflame,Scorm,0.0,"Testování, Vývoj"
-56,8. ledna 2014,13:47,15:25,1.63,Proefes - Muni,Drill tiskový styl,0.0,Vývoj
-57,9. ledna 2014,7:05,12:31,5.43,Proefes - Muni,"Drill menu student, cron",0.0,Vývoj
-57,9. ledna 2014,12:52,16:08,3.27,Proefes - Muni,"Drill menu student, cron",0.0,Vývoj
-58,10. ledna 2014,7:27,13:52,6.42,Proefes - Muni,"Drill cron, stránkování",0.0,Vývoj
-58,10. ledna 2014,14:23,15:54,1.52,Proefes - Muni,"Drill cron, stránkování",0.0,Vývoj
-59,10. ledna 2014,22:06,23:24,1.3,Proefes - Muni,Drill stránkovaní,0.0,Vývoj
-60,13. ledna 2014,7:03,11:52,4.82,Proefes - Muni,Drill,0.0,Vývoj
-60,13. ledna 2014,12:12,12:20,0.13,Proefes - Muni,Drill,0.0,Vývoj
-74,13. ledna 2014,12:24,12:31,0.12,Oriflame,Olap error,0.0,Testování
-61,13. ledna 2014,12:31,13:10,0.65,Proefes - Muni,Drill řazení tabulek,0.0,Vývoj
-75,13. ledna 2014,13:11,14:12,1.02,Oriflame,Olap,0.0,Testování
-62,13. ledna 2014,14:12,15:50,1.63,Proefes - Muni,Drill správa otázek,0.0,Vývoj
-26,14. ledna 2014,7:02,11:21,4.32,VŠOH,Plagiáty,0.0,"Testování, Vývoj"
-76,14. ledna 2014,11:22,11:34,0.2,Oriflame,Olap,0.0,"Testování, Vývoj"
-76,14. ledna 2014,11:57,14:00,2.05,Oriflame,Olap,0.0,"Testování, Vývoj"
-29,14. ledna 2014,14:00,15:46,1.77,Stag,Duplikace,0.0,Vývoj
-30,15. ledna 2014,7:07,7:59,0.87,Stag,Duplikace find_last_run,0.0,Vývoj
-27,15. ledna 2014,8:00,8:52,0.87,VŠOH,Plagiáty,0.0,Vývoj
-27,15. ledna 2014,9:05,9:14,0.15,VŠOH,Plagiáty,0.0,Vývoj
-10,15. ledna 2014,9:14,9:34,0.33,Porady,Moodle moot,0.0,Porada
-28,15. ledna 2014,9:34,11:08,1.57,VŠOH,Plagiáty,0.0,Vývoj
-28,15. ledna 2014,11:18,12:13,0.92,VŠOH,Plagiáty,0.0,Vývoj
-28,15. ledna 2014,12:53,16:28,3.58,VŠOH,Plagiáty,0.0,Vývoj
-29,16. ledna 2014,7:20,12:47,5.45,VŠOH,Plagiáty hledání na webu,0.0,"Testování, Vývoj"
-29,16. ledna 2014,13:03,15:02,1.98,VŠOH,Plagiáty hledání na webu,0.0,"Testování, Vývoj"
-31,16. ledna 2014,15:02,15:34,0.53,Stag,Duplikace kurzů,0.0,Vývoj
-32,17. ledna 2014,7:17,9:28,2.18,Stag,Duplikace - ukládání template,0.0,Vývoj
-63,17. ledna 2014,9:29,11:07,1.63,Proefes - Muni,Moodle 2.6,0.0,"Testování, Vývoj"
-77,17. ledna 2014,11:08,11:28,0.33,Oriflame,Chyba z mejlu,0.0,"Testování, Vývoj"
-64,17. ledna 2014,11:28,12:34,1.1,Proefes - Muni,"Moodle 2.6, drill",0.0,Vývoj
-64,17. ledna 2014,13:03,14:49,1.77,Proefes - Muni,"Moodle 2.6, drill",0.0,Vývoj
-33,17. ledna 2014,14:49,15:41,0.87,Stag,Duplikace kurzu js,0.0,Vývoj
-1,20. ledna 2014,7:11,11:07,3.93,VŠB,My page,0.0,Vývoj
-1,20. ledna 2014,11:08,12:09,1.02,Pragodata,Míša narozeniny,0.0,
-2,20. ledna 2014,12:10,12:44,0.57,VŠB,Semester overview,0.0,Vývoj
-2,20. ledna 2014,13:08,14:41,1.55,VŠB,Semester overview,0.0,Vývoj
-2,21. ledna 2014,7:00,7:30,0.5,Pragodata,Plán práce,0.0,Porada
-3,21. ledna 2014,7:30,10:36,3.1,VŠB,My page,0.0,Vývoj
-78,21. ledna 2014,10:36,11:58,1.37,Oriflame,Reporty,0.0,"Testování, Vývoj"
-65,21. ledna 2014,11:58,15:35,3.62,Proefes - Muni,Příprava balíčků,0.0,"Testování, Vývoj"
-66,21. ledna 2014,22:15,23:06,0.85,Proefes - Muni,Příprava balíčků,0.0,"Testování, Vývoj"
-67,22. ledna 2014,7:08,11:48,4.67,Proefes - Muni,Příprava balíčků,0.0,"Testování, Vývoj"
-79,22. ledna 2014,12:10,14:58,2.8,Oriflame,Olap,0.0,Testování
-4,22. ledna 2014,14:59,16:16,1.28,VŠB,My page,0.0,Vývoj
-80,22. ledna 2014,16:16,16:35,0.32,Oriflame,Migrace,0.0,Testování
-3,23. ledna 2014,7:30,7:56,0.43,Pragodata,Rozvrh práce,0.0,Porada
-81,23. ledna 2014,7:57,11:36,3.65,Oriflame,"Opravy, filtr, kohorty",0.0,"Testování, Vývoj"
-81,23. ledna 2014,12:06,16:44,4.63,Oriflame,"Opravy, filtr, kohorty",0.0,"Testování, Vývoj"
-5,24. ledna 2014,7:10,9:17,2.12,VŠB,Semester overview,0.0,"Porada, Testování"
-82,24. ledna 2014,9:18,12:56,3.63,Oriflame,Statistiky,0.0,Vývoj
-82,24. ledna 2014,13:20,16:23,3.05,Oriflame,Statistiky,0.0,Vývoj
-83,27. ledna 2014,7:19,11:30,4.18,Oriflame,"Export statistik, totara vs. Moodle",0.0,"Testování, Vývoj"
-83,27. ledna 2014,11:54,16:17,4.38,Oriflame,"Export statistik, totara vs. Moodle",0.0,"Testování, Vývoj"
-84,28. ledna 2014,7:15,12:11,4.93,Oriflame,Statistiky,0.0,"Testování, Vývoj"
-84,28. ledna 2014,12:41,15:35,2.9,Oriflame,Statistiky,0.0,"Testování, Vývoj"
-6,29. ledna 2014,7:42,11:30,3.8,VŠB,My page,0.0,Vývoj
-85,29. ledna 2014,11:30,12:25,0.92,Oriflame,Oprava dat,0.0,Testování
-7,29. ledna 2014,12:57,16:05,3.13,VŠB,Semester overview,0.0,Vývoj
-8,30. ledna 2014,7:42,11:43,4.02,VŠB,Semester overview,0.0,Vývoj
-8,30. ledna 2014,12:02,15:49,3.78,VŠB,Semester overview,0.0,Vývoj
+Datum,Začátek,Konec,Doba trvání,rel. Doba trvání,Projekt,Popis
+2. června 2014,7:21,10:19,2.97,2.97,VŠB,Analýza zadání
+2. června 2014,10:19,13:40,3.35,2.62,UNIV 3,"Kvalifikace, kompetence"
+2. června 2014,13:41,16:12,2.52,2.52,VŠB,Web služby
+3. června 2014,7:05,8:10,1.08,1.08,Oriflame,Exporty
+3. června 2014,8:10,15:22,7.2,6.85,VŠB,Web služby
+4. června 2014,7:37,10:42,3.08,3.08,VŠB,Web služby
+4. června 2014,10:42,11:50,1.13,1.13,Moje ID,Chyby na straně mojeid
+4. června 2014,12:10,14:17,2.12,2.12,tazak.cz,Odhad
+4. června 2014,14:17,14:45,0.47,0.47,VŠB,Web služby
+4. června 2014,14:45,16:19,1.57,1.57,tazak.cz,Import a filtry
+5. června 2014,7:11,8:30,1.32,1.32,tazak.cz,Hledání dat v db
+5. června 2014,8:31,9:00,0.48,0.48,UNIV 3,Login site
+5. června 2014,9:00,10:01,1.02,1.02,VŠB,Web služby
+5. června 2014,10:01,11:40,1.65,1.65,Moje ID,Opravy
+5. června 2014,11:41,12:15,0.57,0.57,VŠB,Web služby
+5. června 2014,12:15,13:48,1.55,1.2,Moje ID,"Test, výstupní dokument"
+5. června 2014,13:49,15:09,1.33,1.33,VŠB,Web služby
+5. června 2014,15:09,16:07,0.97,0.97,Moje ID,Úpravy
+6. června 2014,7:07,12:23,5.27,4.88,Moje ID,Úpravy podle připomínek
+6. června 2014,12:23,14:22,1.98,1.98,tazak.cz,"Oprava tabulek, synchronizace"
+6. června 2014,14:23,15:14,0.85,0.85,VŠB,Web služby
+9. června 2014,6:56,8:14,1.3,1.3,Oriflame,Exporty
+9. června 2014,8:14,14:20,6.1,5.78,VŠB,Web služby
+9. června 2014,14:22,15:30,1.13,1.13,Moje ID,Opravy
+10. června 2014,7:21,8:06,0.75,0.75,Real Progress Brno,Aktivace inzerátu
+10. června 2014,8:06,12:46,4.67,4.42,VŠB,Web služby
+10. června 2014,12:47,13:11,0.4,0.4,Real Progress Brno,Aktivní inzerát
+10. června 2014,13:12,15:24,2.2,2.2,tazak.cz,Rozšíření importu a filtrů
+10. června 2014,15:25,15:35,0.17,0.17,Real Progress Brno,Zneaktivneni inzerátu
+11. června 2014,7:32,10:12,2.67,2.67,Real Progress Brno,(ne)aktivní inzerát
+11. června 2014,10:13,11:17,1.07,1.07,Moje ID,Výhody mojeid - url
+11. června 2014,11:18,11:50,0.53,0.53,VŠB,Časový odhad úprav
+11. června 2014,11:50,14:15,2.42,2.18,Moje ID,Manuál
+11. června 2014,14:15,16:21,2.1,2.1,VŠB,Web služby
+12. června 2014,7:05,15:10,8.08,7.75,VŠB,Web služby; postgre
+12. června 2014,15:11,15:34,0.38,0.38,Moje ID,Manuál
+13. června 2014,7:10,7:40,0.5,0.5,Moje ID,Manuál
+13. června 2014,7:40,10:20,2.67,2.67,VŠB,"Web služby, postgre"
+13. června 2014,10:20,11:15,0.92,0.92,Moje ID,Manuál
+13. června 2014,11:15,15:35,4.33,3.95,VŠB,Web služby
+16. června 2014,8:47,11:22,2.58,2.58,Moje ID,Opravy
+16. června 2014,11:23,17:19,5.93,5.32,VŠB,Web služby; vrácení výsledků
+17. června 2014,7:23,11:58,4.58,4.58,VŠB,Webové služby; přenos výsledků
+17. června 2014,11:59,15:38,3.65,3.35,Moje ID,Úroveň ověření
+18. června 2014,7:42,10:53,3.18,3.18,Oriflame,Chyba v olap výpočtech
+18. června 2014,10:54,13:15,2.35,1.95,Moje ID,Oficiální Moodle plugin
+18. června 2014,13:15,15:39,2.4,2.4,VŠB,Web služby
+19. června 2014,7:35,9:30,1.92,1.92,VŠB,"Web služby - testování, náležitosti"
+19. června 2014,9:30,11:30,2.0,2.0,Moje ID,Možnost měnit obrázky
+19. června 2014,11:30,15:36,4.1,4.1,VŠB,Web služby - nastavení
+20. června 2014,7:40,8:30,0.83,0.83,Moje ID,Úpravy
+20. června 2014,8:30,15:53,7.38,6.83,VŠB,web služby
+23. června 2014,9:18,17:22,8.07,8.07,VŠB,"Web služby "
+24. června 2014,7:15,15:33,8.3,7.98,VŠB,Web sluzby
+25. června 2014,7:14,15:35,8.35,8.13,VŠB,Web služby
+26. června 2014,7:05,15:30,8.42,7.98,VŠB,Web služby
+27. června 2014,7:39,9:56,2.28,2.28,VŠB,Web služby
+27. června 2014,9:56,11:38,1.7,1.7,VŠB,"Pomalý dotaz při výpisu my-semester-overview "
+27. června 2014,11:40,14:21,2.68,2.45,VŠB,Hledání spouštění dotazu
+27. června 2014,14:22,15:48,1.43,1.43,Pragodata,
+30. června 2014,7:19,12:09,4.83,4.83,VŠB,"Web služby - kontrola, nahrání na jejich test, mejl se zdrojaky; semester overview"
+30. června 2014,12:11,15:35,3.4,2.8,Real Progress Brno,Publikování na s reality oprava
+30. června 2014,15:36,16:03,0.45,0.45,Pragodata,"Email o dovolené, email o rpb"

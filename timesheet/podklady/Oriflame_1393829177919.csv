@@ -1,0 +1,25 @@
+Číslo,Datum,Začátek,Konec,Doba trvání,Projekt,Popis,Přestávky,Štítky
+71,7. ledna 2014,11:02,13:07,2.08,Oriflame,Ie problém,0.0,Testování
+71,7. ledna 2014,13:37,14:05,0.47,Oriflame,Ie problém,0.0,Testování
+72,8. ledna 2014,7:40,8:56,1.27,Oriflame,Scorm,0.0,Testování
+73,8. ledna 2014,12:23,13:47,1.4,Oriflame,Scorm,0.0,"Testování, Vývoj"
+74,13. ledna 2014,12:24,12:31,0.12,Oriflame,Olap error,0.0,Testování
+75,13. ledna 2014,13:11,14:12,1.02,Oriflame,Olap,0.0,Testování
+76,14. ledna 2014,11:22,11:34,0.2,Oriflame,Olap,0.0,"Testování, Vývoj"
+76,14. ledna 2014,11:57,14:00,2.05,Oriflame,Olap,0.0,"Testování, Vývoj"
+77,17. ledna 2014,11:08,11:28,0.33,Oriflame,Chyba z mejlu,0.0,"Testování, Vývoj"
+78,21. ledna 2014,10:36,11:58,1.37,Oriflame,Reporty,0.0,"Testování, Vývoj"
+79,22. ledna 2014,12:10,14:58,2.8,Oriflame,Olap,0.0,Testování
+80,22. ledna 2014,16:16,16:35,0.32,Oriflame,Migrace,0.0,Testování
+81,23. ledna 2014,7:57,11:36,3.65,Oriflame,"Opravy, filtr, kohorty",0.0,"Testování, Vývoj"
+81,23. ledna 2014,12:06,16:44,4.63,Oriflame,"Opravy, filtr, kohorty",0.0,"Testování, Vývoj"
+82,24. ledna 2014,9:18,12:56,3.63,Oriflame,Statistiky,0.0,Vývoj
+82,24. ledna 2014,13:20,16:23,3.05,Oriflame,Statistiky,0.0,Vývoj
+83,27. ledna 2014,7:19,11:30,4.18,Oriflame,"Export statistik, totara vs. Moodle",0.0,"Testování, Vývoj"
+83,27. ledna 2014,11:54,16:17,4.38,Oriflame,"Export statistik, totara vs. Moodle",0.0,"Testování, Vývoj"
+84,28. ledna 2014,7:15,12:11,4.93,Oriflame,Statistiky,0.0,"Testování, Vývoj"
+84,28. ledna 2014,12:41,15:35,2.9,Oriflame,Statistiky,0.0,"Testování, Vývoj"
+85,29. ledna 2014,11:30,12:25,0.92,Oriflame,Oprava dat,0.0,Testování
+86,3. února 2014,8:15,11:19,3.07,Oriflame,Poslední kontroly před předáním,0.0,Testování
+87,7. února 2014,12:39,15:13,2.57,Oriflame,Statistiky cron,0.0,Vývoj
+88,14. února 2014,15:32,15:56,0.4,Oriflame,Export,0.0,Vývoj

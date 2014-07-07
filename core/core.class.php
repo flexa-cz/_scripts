@@ -3,8 +3,11 @@
  * hlavni objekt
  */
  class Core{
+	 /** @var Site $site */
 	public $site;
+	/** @var Db $db */
 	public $db;
+	/** @var Table $table */
 	public $table;
 
 	/**
