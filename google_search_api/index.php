@@ -13,18 +13,30 @@
 //stavbou automobilu už Berliet prováděl už v roce 189 .
 //Od té doby vyrobil několik prvních vozů s jednoválcovými motor';
 
-$search='Cyklostyl (alebo mimeograf) je prístroj na rozmnožovanie písomností.
-	Bol rozšírený v čase, kedy moderné kopírovacie stroje alebo osobné počítače neboli dostupné.
-	Prístroj sa skladal z plechového bubna, na ktorom bola napätá špeciálna blana.
-	Princíp tlače spočíval v prepúšťaní farby blany. Blana pozostávala z troch listov.
-	Prvý list bola vlastná blana a tá jediná mala význam pre "tlač" - bola na jednej strane opatrená vrstvou fialovej farby.
-	Spodný list bol tvrdý papier a uprostred relatívne nekvalitný (na jedno použitie) kopirák.
-	Na blanu sa písalo písacím strojom bez farbiacej pásky.';
+//$search='Cyklostyl (alebo mimeograf) je prístroj na rozmnožovanie písomností.
+//	Bol rozšírený v čase, kedy moderné kopírovacie stroje alebo osobné počítače neboli dostupné.
+//	Prístroj sa skladal z plechového bubna, na ktorom bola napätá špeciálna blana.
+//	Princíp tlače spočíval v prepúšťaní farby blany. Blana pozostávala z troch listov.
+//	Prvý list bola vlastná blana a tá jediná mala význam pre "tlač" - bola na jednej strane opatrená vrstvou fialovej farby.
+//	Spodný list bol tvrdý papier a uprostred relatívne nekvalitný (na jedno použitie) kopirák.
+//	Na blanu sa písalo písacím strojom bez farbiacej pásky.';
+
+$search='Odstranění pařezu je fyzicky náročná práce, zejména pokud se pařez
+	nachází';
+
+//$search='Odstranění pařezu je fyzicky náročná práce, zejména pokud se pařez
+//	nachází na místě nedostupném pro těžkou mechanizaci, kdy je potřeba jej za
+//	pomoci ručního nářadí (krumpáč, sekera, klín, pajsr aj.) obsekat a uvolnit
+//	od zbytků kořenů. Následně je pařez vytržen pomocí silného lanového nebo
+//	řetězového zvedáku (hupcuk) uvázaného např. k dalšímu silnému stromu.
+//	U pařezu vyskytujícího se naopak na volně dostupném místě je možné zvolit
+//	např. metodu odbagrování či odfrézování.';
 
 //my_google_search($search);
 //fetch_google($search);
-yahoo_search($search);
+//yahoo_search($search);
 //google_api_search($search);
+google_ajax_api($search);
 
 
 
@@ -72,6 +84,20 @@ yahoo_search($search);
 //		}
 //	}
 //}
+
+function google_ajax_api($search){
+	$url='http://ajax.googleapis.com/ajax/services/search/web?';
+	$params=array('v'=>'1.0','start'=>'0','filter'=>'0','num'=>'10','client'=>'google-csbe','q'=>urlencode($search),);
+	$params_arr=array();
+	foreach($params as $key => $value){
+		$params_arr[]=$key.'='.$value;
+	}
+	$params_string=implode('&',$params_arr);
+	$results=json_decode(file_get_contents($url.$params_string));
+	echo '<div style="background: red; color: #ffc; font-weight: bold; padding: .3em 1em; margin: 1em 0 0 0; font-size: 130%; font-family: Courier, monospace;">$results</div><div style="border: 1px solid red; background: #ffc; padding: 1em; margin: 0 0 1em 0; overflow: auto; font-family: Courier, monospace;"><pre>';
+	var_export($results);
+	echo '</pre><p style="font-size: 75%; color: red;"><b>file: </b>'.__FILE__.'<br><b>line: </b>'.__LINE__.'</p></div>';
+}
 
 function google_api_search($search){
 	include_once('./google_api_search.class.php');

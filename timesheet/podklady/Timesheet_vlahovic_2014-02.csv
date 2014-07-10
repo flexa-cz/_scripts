@@ -1,0 +1,53 @@
+Číslo,Datum,Začátek,Konec,Doba trvání,Projekt,Popis,Přestávky,Štítky
+9,3. února 2014,7:05,8:15,1.17,VŠB,Semestr overview,0.0,Vývoj
+86,3. února 2014,8:15,11:19,3.07,Oriflame,Poslední kontroly před předáním,0.0,Testování
+10,3. února 2014,11:19,11:57,0.63,VŠB,Semestr overview,0.0,Vývoj
+10,3. února 2014,12:12,15:37,3.42,VŠB,Semestr overview,0.0,Vývoj
+11,4. února 2014,7:00,12:51,5.85,VŠB,Semester overview,0.0,Vývoj
+12,4. února 2014,13:07,13:50,0.72,VŠB,Semestr overview - řazení,0.0,Vývoj
+68,4. února 2014,13:51,14:26,0.58,Proefes - Muni,Instalace,0.0,"Testování, Vývoj"
+4,4. února 2014,14:26,15:27,1.02,Pragodata,Moodle moot slide show,0.0,Vývoj
+5,5. února 2014,7:13,14:45,7.53,Pragodata,Moodle moot,0.0,Vývoj
+5,5. února 2014,15:05,16:15,1.17,Pragodata,Moodle moot,0.0,Vývoj
+13,6. února 2014,7:14,8:45,1.52,VŠB,Semester overview,0.0,Vývoj
+6,6. února 2014,8:45,12:18,3.55,Pragodata,Moodle moot reg. Form,0.0,Vývoj
+6,6. února 2014,12:40,16:15,3.58,Pragodata,Moodle moot reg. Form,0.0,Vývoj
+7,7. února 2014,7:16,11:33,4.28,Pragodata,Registrace,0.0,Vývoj
+7,7. února 2014,12:06,12:39,0.55,Pragodata,Registrace,0.0,Vývoj
+87,7. února 2014,12:39,15:13,2.57,Oriflame,Statistiky cron,0.0,Vývoj
+8,7. února 2014,15:13,15:52,0.65,Pragodata,Registrace,0.0,Vývoj
+9,10. února 2014,6:59,10:02,3.05,Pragodata,Registrace,0.0,Vývoj
+1,10. února 2014,10:04,11:28,1.4,Anect,Auth ldap2,0.0,"Testování, Vývoj"
+1,10. února 2014,11:47,13:05,1.3,Anect,Auth ldap2,0.0,"Testování, Vývoj"
+10,10. února 2014,13:05,13:30,0.42,Pragodata,Registrace,0.0,Vývoj
+2,10. února 2014,13:30,15:56,2.43,Anect,Ldap,0.0,"Testování, Vývoj"
+11,11. února 2014,7:14,13:43,6.48,Pragodata,Registrace,0.0,Vývoj
+11,11. února 2014,13:59,15:56,1.95,Pragodata,Registrace,0.0,Vývoj
+12,12. února 2014,6:55,8:15,1.33,Pragodata,Registrace,0.0,Vývoj
+13,12. února 2014,8:15,9:09,0.9,Pragodata,Univ,0.0,Testování
+14,12. února 2014,9:10,12:28,3.3,Pragodata,Export csv,0.0,Vývoj
+14,12. února 2014,12:54,15:56,3.03,Pragodata,Export csv,0.0,Vývoj
+15,13. února 2014,7:12,11:05,3.88,Pragodata,Registrace,0.0,"Porada, Vývoj"
+16,13. února 2014,11:06,13:13,2.12,Pragodata,Sreality,0.0,Vývoj
+16,13. února 2014,13:30,13:42,0.2,Pragodata,Sreality,0.0,Vývoj
+109,13. února 2014,13:43,15:50,2.12,UNIV 3,Dokument 3.1,0.0,Vývoj
+110,14. února 2014,7:23,12:29,5.1,UNIV 3,3.1,0.0,Vývoj
+110,14. února 2014,12:48,15:31,2.72,UNIV 3,3.1,0.0,Vývoj
+88,14. února 2014,15:32,15:56,0.4,Oriflame,Export,0.0,Vývoj
+111,15. února 2014,21:06,23:07,2.02,UNIV 3,3.1,0.0,Vývoj
+14,24. února 2014,7:05,11:44,4.65,VŠB,Semester overview,0.0,Vývoj
+14,24. února 2014,12:02,15:40,3.63,VŠB,Semester overview,0.0,Vývoj
+15,25. února 2014,7:29,12:07,4.63,VŠB,Semester overview,0.0,Vývoj
+15,25. února 2014,12:23,14:02,1.65,VŠB,Semester overview,0.0,Vývoj
+112,25. února 2014,14:03,14:44,0.68,UNIV 3,3.1,0.0,Vývoj
+16,25. února 2014,14:45,15:06,0.35,VŠB,Semester overview,0.0,Vývoj
+113,25. února 2014,15:06,15:44,0.63,UNIV 3,3.1,0.0,Vývoj
+17,26. února 2014,7:35,10:02,2.45,VŠB,Semester overview,0.0,Vývoj
+114,26. února 2014,10:02,10:37,0.58,UNIV 3,3.1,0.0,Vývoj
+30,26. února 2014,10:38,12:27,1.82,VŠOH,Plagiáty,0.0,Vývoj
+30,26. února 2014,12:48,16:36,3.8,VŠOH,Plagiáty,0.0,Vývoj
+18,27. února 2014,7:29,9:07,1.63,VŠB,Plagiáty,0.0,Vývoj
+115,27. února 2014,9:08,12:37,3.48,UNIV 3,3.1 dodavatelé,0.0,Vývoj
+115,27. února 2014,12:56,16:26,3.5,UNIV 3,3.1 dodavatelé,0.0,Vývoj
+116,28. února 2014,7:18,12:33,5.25,UNIV 3,3.1 dodavatelé,0.0,Vývoj
+116,28. února 2014,12:55,13:53,0.97,UNIV 3,3.1 dodavatelé,0.0,Vývoj

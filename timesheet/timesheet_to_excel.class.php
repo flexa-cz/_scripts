@@ -16,20 +16,20 @@ class TimesheetToExcel extends ImportCsv{
 	 * @return \TimesheetToExcel
 	 */
 	protected function updateRow($data){
-		$date=str_replace($this->month_from, $this->month_to, $data[1]);
+		$date=str_replace($this->month_from, $this->month_to, $data[0]);
 		if($date!==$this->last_date && !empty($this->row_data)){
 			$this->printRow();
 		}
 		$str=$data[6].' ('.$data[5].')';
 		if(!$this->row_data){
 			$this->row_data['date']=$date;
-			$this->row_data['from']=$data[2];
-			$this->row_data['to']=$data[3];
+			$this->row_data['from']=$data[1];
+			$this->row_data['to']=$data[2];
 			$this->row_data['text']=array($str=>(float)$data[4]);
 			$this->row_data['hours']=(float)$data[4];
 		}
 		else{
-			$this->row_data['to']=$data[3];
+			$this->row_data['to']=$data[2];
 			if(!isset($this->row_data['text'][$str])){
 				$this->row_data['text'][$str]=(float)$data[4];
 			}

@@ -1,0 +1,67 @@
+Číslo,Datum,Začátek,Konec,Doba trvání,Projekt,Popis,Přestávky,Štítky
+117,3. března 2014,7:26,10:47,3.35,UNIV 3,3.1 dodavatelé,0.0,Vývoj
+32,3. března 2014,10:47,13:05,2.3,VŠOH,Plagiáty,0.0,Vývoj
+32,3. března 2014,13:41,16:17,2.6,VŠOH,Plagiáty,0.0,Vývoj
+33,4. března 2014,6:56,12:49,5.88,VŠOH,Plagiáty,0.0,Vývoj
+33,4. března 2014,13:10,15:38,2.47,VŠOH,Plagiáty,0.0,Vývoj
+89,5. března 2014,7:20,11:30,4.17,Oriflame,Ftp,0.0,Vývoj
+118,5. března 2014,11:48,16:16,4.47,UNIV 3,Dodavatelé,0.0,Vývoj
+90,6. března 2014,7:11,8:27,1.27,Oriflame,Ftp export,0.0,Vývoj
+30,6. března 2014,8:28,9:30,1.03,tazak.cz,Nová export. služba - Bloud,0.0,Porada
+34,6. března 2014,9:30,12:57,3.45,VŠOH,Plagiáty,0.0,Vývoj
+34,6. března 2014,13:20,13:27,0.12,VŠOH,Plagiáty,0.0,Vývoj
+91,6. března 2014,13:28,14:37,1.15,Oriflame,Časová analýza,0.0,Analýza
+35,6. března 2014,14:37,15:51,1.23,VŠOH,Plagiáty,0.0,Vývoj
+119,7. března 2014,7:55,10:17,2.37,UNIV 3,"Dodavatelé, drobné opravy",0.0,Vývoj
+36,7. března 2014,10:18,13:35,3.28,VŠOH,Plagiáty parsování nežádoucích znaků,0.0,Vývoj
+36,7. března 2014,13:55,14:23,0.47,VŠOH,Plagiáty parsování nežádoucích znaků,0.0,Vývoj
+120,7. března 2014,14:24,15:34,1.17,UNIV 3,"3.1 - oprava pro školu s dph, nasazení",0.0,"Testování, Vývoj"
+37,7. března 2014,15:35,16:46,1.18,VŠOH,Plagiáty parsování,0.0,Vývoj
+38,10. března 2014,7:21,12:25,5.07,VŠOH,"Plagiáty - parsování, gui",0.0,Vývoj
+38,10. března 2014,12:48,16:12,3.4,VŠOH,"Plagiáty - parsování, gui",0.0,Vývoj
+39,11. března 2014,7:33,13:10,5.62,VŠOH,"Plagiaty - parsování pdf, odt, doc ",0.0,Vývoj
+39,11. března 2014,13:32,15:02,1.5,VŠOH,"Plagiaty - parsování pdf, odt, doc ",0.0,Vývoj
+1,11. března 2014,15:04,15:36,0.53,ZČU,Hotpot,0.0,Testování
+2,12. března 2014,7:10,7:15,0.08,ZČU,Luděk,0.0,Porada
+1,12. března 2014,7:17,8:05,0.8,Real Progress Brno,Sreality konektor,0.0,Vývoj
+3,12. března 2014,8:06,11:40,3.57,ZČU,Hotpot,0.0,"Testování, Vývoj"
+3,12. března 2014,12:12,15:00,2.8,ZČU,Hotpot,0.0,"Testování, Vývoj"
+40,12. března 2014,15:00,16:13,1.22,VŠOH,Plagiáty,0.0,"Testování, Vývoj"
+41,13. března 2014,7:31,11:57,4.43,VŠOH,Plagiáty,0.0,Vývoj
+41,13. března 2014,12:13,15:04,2.85,VŠOH,Plagiáty,0.0,Vývoj
+42,14. března 2014,7:28,12:07,4.65,VŠOH,Plagiáty,0.0,Vývoj
+42,14. března 2014,12:25,14:00,1.58,VŠOH,Plagiáty,0.0,Vývoj
+4,14. března 2014,14:00,16:25,2.42,ZČU,Hotpot,0.0,"Testování, Vývoj"
+18,17. března 2014,7:45,8:08,0.38,VŠB,Semestr overview,0.0,Testování
+43,17. března 2014,8:09,11:57,3.8,VŠOH,Plagiáty oprava výpisu,0.0,Vývoj
+2,17. března 2014,12:17,15:52,3.58,Real Progress Brno,Konektor sreality,0.0,Vývoj
+3,18. března 2014,7:18,11:31,4.22,Real Progress Brno,Konektor sreality,0.0,Vývoj
+3,18. března 2014,12:05,15:43,3.63,Real Progress Brno,Konektor sreality,0.0,Vývoj
+4,19. března 2014,7:22,9:49,2.45,Real Progress Brno,Konektor,0.0,Vývoj
+44,19. března 2014,9:50,10:45,0.92,VŠOH,Plagiáty - ikony,0.0,Vývoj
+5,19. března 2014,10:45,13:41,2.93,Real Progress Brno,Konektor,0.0,Vývoj
+5,19. března 2014,13:55,16:04,2.15,Real Progress Brno,Konektor,0.0,Vývoj
+6,20. března 2014,7:25,13:21,5.93,Real Progress Brno,Konektor,0.0,Vývoj
+6,20. března 2014,13:55,16:09,2.23,Real Progress Brno,Konektor,0.0,Vývoj
+7,21. března 2014,7:25,10:10,2.75,Real Progress Brno,"Konektor, napojení",0.0,Vývoj
+17,21. března 2014,10:10,10:50,0.67,Pragodata,Moodle moot registrace úprava,0.0,Vývoj
+8,21. března 2014,10:51,13:15,2.4,Real Progress Brno,Konektor napojení,0.0,Vývoj
+8,21. března 2014,13:29,15:17,1.8,Real Progress Brno,Konektor napojení,0.0,Vývoj
+9,24. března 2014,7:24,12:00,4.6,Real Progress Brno,Konektor napojení,0.0,Vývoj
+9,24. března 2014,12:20,16:18,3.97,Real Progress Brno,Konektor napojení,0.0,Vývoj
+10,25. března 2014,7:17,12:41,5.4,Real Progress Brno,Konektor napojení,0.0,Vývoj
+10,25. března 2014,13:01,15:26,2.42,Real Progress Brno,Konektor napojení,0.0,Vývoj
+11,26. března 2014,8:16,12:25,4.15,Real Progress Brno,Napojení,0.0,Vývoj
+11,26. března 2014,12:42,16:45,4.05,Real Progress Brno,Napojení,0.0,Vývoj
+12,27. března 2014,7:20,8:40,1.33,Real Progress Brno,Napojení,0.0,Vývoj
+19,27. března 2014,8:40,9:20,0.67,VŠB,"Akreditace, certifikace",0.0,Porada
+13,27. března 2014,9:20,12:55,3.58,Real Progress Brno,Napojení,0.0,Vývoj
+13,27. března 2014,13:10,14:15,1.08,Real Progress Brno,Napojení,0.0,Vývoj
+20,27. března 2014,14:15,15:45,1.5,VŠB,Akreditace,0.0,Vývoj
+21,28. března 2014,7:34,9:15,1.68,VŠB,Akreditace,0.0,Vývoj
+45,28. března 2014,9:15,12:05,2.83,VŠOH,Plagiáty,0.0,Vývoj
+45,28. března 2014,12:28,14:14,1.77,VŠOH,Plagiáty,0.0,Vývoj
+31,28. března 2014,14:14,15:56,1.7,tazak.cz,Převzetí,0.0,Porada
+46,31. března 2014,9:20,12:47,3.45,VŠOH,Výpis Plagiáty,0.0,Vývoj
+14,31. března 2014,13:29,13:36,0.12,Real Progress Brno,Napojení konektoru,0.0,Vývoj
+14,31. března 2014,22:25,22:50,0.42,Real Progress Brno,Napojení konektoru,0.0,Vývoj

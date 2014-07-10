@@ -1,0 +1,10 @@
+#game_plan .cell{cursor: pointer;}
+#game_plan .cell.hover,#game_plan .cell:hover{background-color: #eee;}
+#game_plan .cell.finished{background-color: #fff; cursor: default;}
+#game_plan .cell.last-draw{background-color: #fcc;}
+#game_plan .cell.win{background-color: orange;}
+
+.debug_info{padding: 10px; background: #ffc; border: 1px solid black; margin: 0; display: block; width: 200px; position: absolute; top: 20px; right: 20px;}
+.debug_info .symbol{position: absolute; top: 0; right: 10px; font-size: 350%; color: #fd4; font-family: "Times New Roman", Times, serif;}
+.debug_info p{font-size: 120%; margin: 0 0 1em 0;}
+.player_2{right: 260px;}

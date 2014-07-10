@@ -10,6 +10,7 @@ fieldset{width: 750px;padding: 1em;border:1px solid #09f;margin: 0 0 1em 0;}
 legend{color: #09f;font-style: italic;font-size: 70%;}
 label{width:240px;float: left;clear: both;margin-top: 5px;font-size: 80%;}
 input[type=text],select,textarea{width:500px;float: left;margin-top: 5px;}
+input.WidthAuto,select.WidthAuto,textarea.WidthAuto,.WidthAuto{width: auto;}
 
 /* ************************************************************************** */
 /* report																																			*/
