@@ -157,12 +157,21 @@ function ScanitForm(_php_script_address){
 				}
 			}
 			else{
-//				alert('bylo odeslano');
+				alert(data['report']);
+				if(data['status']==='succ'){
+					self.resetForm();
+				}
 			}
 		}).error(function(){
 			console.warn('PHP server is unavailable!');
 			self.showError('Omlouváme se, ale momentálně je objednávkový systém mimo provoz.<br /> Zkuste to prosím později, nebo nám zašlete e-mail.');
 		});
+		return self;
+	};
+
+	this.resetForm=function(){
+		form.trigger('reset');
+		self.initPrices().calculatePrices();
 		return self;
 	};
 }
