@@ -1,5 +1,0 @@
-body{font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size: 10pt; margin: 0; padding: 0; background: #fafafa;}
-#game_plan,#game_plan .cell{border: 1px solid #ccc; font-family: "Times New Roman", Times, serif; font-size: 12pt;}
-#game_plan{border-left: 2px solid #ccc; border-top: 2px solid #ccc; display: inline-block; margin: 20px; background: white;}
-#game_plan .row{margin: 0; padding: 0; float: left; clear: both;}
-#game_plan .cell{display: block; width: 20px; height: 20px; margin: 0; padding: 0; float: left; border-left: none; border-top: none; text-align: center; line-height: 20px; font-size: 16pt; font-weight: bold; overflow: hidden;}
