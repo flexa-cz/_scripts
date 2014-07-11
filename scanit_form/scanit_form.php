@@ -67,7 +67,8 @@ class ScanitForm{
 	private $is_allowed_domain=false;
 	private $actual_prices;
 	private $output;
-	private $recipients=array('Milan Vlahovič <flexa@flexa.cz>');
+	private $recipients=array('Radek Myšulka <radek@mgrafika.cz>');
+//	private $recipients=array('Milan Vlahovič <flexa@flexa.cz>');
 	private $senders=array();
 	private $header;
 	private $message=false;
