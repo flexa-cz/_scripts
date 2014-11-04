@@ -109,7 +109,7 @@ if(isset($_POST['cross'])){
 	<table>
 		<tr>
 			<td><label for="cross">kriz</label></td>
-			<td><textarea cols="10"0 rows="10" name="cross" id="cross"><?=(!empty($_POST['cross']) ? $_POST['cross'] : false)?></textarea></td>
+			<td><textarea cols="10" rows="10" name="cross" id="cross"><?=(!empty($_POST['cross']) ? $_POST['cross'] : false)?></textarea></td>
 		</tr>
 		<tr>
 			<td><label for="morse">morseovka</label></td>

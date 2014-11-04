@@ -31,4 +31,3 @@ require_once(_ROOT.'core/table.class.php');
 // staticke tridy
 require_once(_ROOT.'core/report.class.php');
 require_once(_ROOT.'core/url.class.php');
-?>
