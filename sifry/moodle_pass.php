@@ -1,6 +1,6 @@
 <?php
 include_once('./password.lib.php');
-$pass='Ha3dar5*';
+$pass='pass';
 $algo=1;
 $options_1=array('cost' => 4);
 $options_2=array();
