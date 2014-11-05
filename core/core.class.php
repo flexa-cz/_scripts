@@ -9,6 +9,8 @@
 	public $db;
 	/** @var Table $table */
 	public $table;
+	/** @var MVC $mvc */
+	public $loader;
 
 	/**
 	 * jadro "frameworku" :-)
@@ -17,10 +19,16 @@
 	 * @param Table $table
 	 */
 	public function __construct(Db $db=null, Site $site=null, Table $table=null){
-		$db=($db ? $db : new Db);
-		$site=($site ? $site : new Site);
-		$table=($table ? $table : new Table);
-		$this->setDb($db)->setSite($site)->setTable($table);
+		$loader=new Loader();
+		$_db=($db ? $db : new Db);
+		$_site=($site ? $site : new Site);
+		$_table=($table ? $table : new Table);
+		$this->setDb($_db)->setSite($_site)->setTable($_table)->setLoader($loader);
+	}
+
+	private function setLoader(Loader $loader){
+		$this->loader=$loader;
+		return $this;
 	}
 
 	private function setDb(Db $db){
