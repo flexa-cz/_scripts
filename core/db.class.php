@@ -119,4 +119,3 @@ class Db{
 		return $this->mysql_connect;
 	}
 }
-?>
