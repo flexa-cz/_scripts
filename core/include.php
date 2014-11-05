@@ -15,7 +15,7 @@ define('_ROOT',$root);
 
 // debugovaci skript
 // cim driv se vlozi tim driv zacne pocitat dobu behu aplikace
-require_once(_ROOT.'core/libraries/debuger/debuger.class.php');
+require_once(_ROOT.'core/libraries/debuger/Debuger.class.php');
 debuger::set_localhost(true);
 debuger::set_ui('inline');
 
@@ -23,12 +23,12 @@ debuger::set_ui('inline');
 require_once(_ROOT.'core/constants.php');
 
 // core tridy
-require_once(_ROOT.'core/core.class.php');
-require_once(_ROOT.'core/site.class.php');
-require_once(_ROOT.'core/db.class.php');
-require_once(_ROOT.'core/table.class.php');
+require_once(_ROOT.'core/Core.class.php');
+require_once(_ROOT.'core/Loader.class.php');
+require_once(_ROOT.'core/Site.class.php');
+require_once(_ROOT.'core/Db.class.php');
+require_once(_ROOT.'core/Table.class.php');
 
 // staticke tridy
-require_once(_ROOT.'core/report.class.php');
-require_once(_ROOT.'core/url.class.php');
-?>
+require_once(_ROOT.'core/Report.class.php');
+require_once(_ROOT.'core/Url.class.php');

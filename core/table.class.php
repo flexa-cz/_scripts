@@ -22,21 +22,21 @@ class Table{
 	/* ************************************************************************ */
 	/* public methods																														*/
 	/* ************************************************************************ */
-	public final function setRows($rows){
+	public final function setRows(array $rows){
 		$this->rows=$rows;
 		$this->table=false;
 		$this->table_header=false;
 		return $this;
 	}
 
-	public final function setRow($row){
+	public final function setRow(array $row){
 		$this->rows[]=$row;
 		$this->table=false;
 		$this->table_header=false;
 		return $this;
 	}
 
-	public final function setHeader($header){
+	public final function setHeader(array $header){
 		$this->header=$header;
 		return $this;
 	}
