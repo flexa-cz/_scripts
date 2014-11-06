@@ -58,6 +58,23 @@ class site{
 		return $this;
 	}
 
+	final public function required($type, $file_name){
+		$file_url='www/'.$type.'/'.$file_name;
+		$file_address=_PROJECT_ROOT.$file_url;
+		if(file_exists($file_address)){
+			if($type==='css'){
+				$header='<link rel="stylesheet" type="text/css" href="/'.$file_url.'" title="style" media="screen" />';
+				$this->addHeader($header);
+			}
+			else{
+				throw new Exception('Unsupported file type.');
+			}
+		}
+		else{
+			throw new Exception('Unexisting file "'.$file_address.'".');
+		}
+	}
+
 	/* ************************************************************************ */
 	/* private methods																													*/
 	/* ************************************************************************ */

@@ -12,6 +12,7 @@ $controller=(!empty($_GET['controller']) && in_array($_GET['controller'], $allow
 
 $core->site->setTitle($site_title);
 $core->site->addContent(_N.'<h1>'.$site_title.'</h1>');
+$core->site->required('css', 'general.css');
 
 if($controller==='persons'){
 	$core->loader->getController('Person', array('Core'=>$core))->render();
