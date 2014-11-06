@@ -1,4 +1,5 @@
 <?php
+namespace core;
 class Table{
 	private $table;
 	private $rows;

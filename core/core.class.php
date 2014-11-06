@@ -1,4 +1,5 @@
 <?php
+namespace core;
 /**
  * hlavni objekt
  */
@@ -9,7 +10,7 @@
 	public $db;
 	/** @var Table $table */
 	public $table;
-	/** @var MVC $mvc */
+	/** @var Loader $mvc */
 	public $loader;
 
 	/**
@@ -20,10 +21,12 @@
 	 */
 	public function __construct(Db $db=null, Site $site=null, Table $table=null){
 		$loader=new Loader();
-		$_db=($db ? $db : new Db);
-		$_site=($site ? $site : new Site);
-		$_table=($table ? $table : new Table);
-		$this->setDb($_db)->setSite($_site)->setTable($_table)->setLoader($loader);
+		$this
+						->setLoader($loader)
+						->setDb($db)
+						->setSite($site)
+						->setTable($table)
+						;
 	}
 
 	private function setLoader(Loader $loader){
@@ -31,18 +34,18 @@
 		return $this;
 	}
 
-	private function setDb(Db $db){
-		$this->db=$db;
+	private function setDb(Db $db=null){
+		$this->db=($db ? $db : $this->loader->getCore('Db'));
 		return $this;
 	}
 
-	private function setSite(Site $site){
-		$this->site=$site;
+	private function setSite(Site $site=null){
+		$this->site=($site ? $site : $this->loader->getCore('Site'));
 		return $this;
 	}
 
-	private function setTable(Table $table){
-		$this->table=$table;
+	private function setTable(Table $table=null){
+		$this->table=($table ? $table : $this->loader->getCore('Table'));
 		return $this;
 	}
  }

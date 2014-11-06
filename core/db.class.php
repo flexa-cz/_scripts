@@ -1,4 +1,5 @@
 <?php
+namespace core;
 class Db{
 	private $config_file_address="core/config.ini";
 	// pripojeni k db

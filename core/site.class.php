@@ -1,4 +1,5 @@
 <?php
+namespace core;
 /**
  * resi html stranu a jeji nezbytne soucasti...
  */
@@ -21,7 +22,7 @@ class site{
 	{
 		return	$this->header().
 						$this->site.
-						report::getInstance()->getReport().
+						Report::getInstance()->getReport().
 						zvyraznit($this->content,$this->highlight).
 						$this->footer();
 	}
