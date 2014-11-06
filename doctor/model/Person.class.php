@@ -1,6 +1,9 @@
 <?php
+<<<<<<< HEAD
 namespace doctor\model;
 use core;
+=======
+>>>>>>> origin/master
 /**
  * Description of Person
  *
@@ -9,7 +12,11 @@ use core;
 class Person{
 	private $db;
 
+<<<<<<< HEAD
 	public function setDb(core\Db $db){
+=======
+	public function setDb(Db $db){
+>>>>>>> origin/master
 		$this->db=$db;
 		return $db;
 	}
