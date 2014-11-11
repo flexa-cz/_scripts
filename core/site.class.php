@@ -58,12 +58,28 @@ class site{
 		return $this;
 	}
 
-	final public function required($type, $file_name){
+	final public function requiredJs($file_name){
+		return $this->required('js', $file_name);
+	}
+
+	final public function requiredCss($file_name){
+		return $this->required('css', $file_name);
+	}
+
+	/* ************************************************************************ */
+	/* private methods																													*/
+	/* ************************************************************************ */
+
+	final private function required($type, $file_name){
 		$file_url='www/'.$type.'/'.$file_name;
 		$file_address=_PROJECT_ROOT.$file_url;
 		if(file_exists($file_address)){
 			if($type==='css'){
 				$header='<link rel="stylesheet" type="text/css" href="/'.$file_url.'" title="style" media="screen" />';
+				$this->addHeader($header);
+			}
+			elseif($type==='js'){
+				$header='<script type="text/javascript" src="/'.$file_url.'"></script>';
 				$this->addHeader($header);
 			}
 			else{
@@ -73,11 +89,9 @@ class site{
 		else{
 			throw new Exception('Unexisting file "'.$file_address.'".');
 		}
+		return $this;
 	}
 
-	/* ************************************************************************ */
-	/* private methods																													*/
-	/* ************************************************************************ */
 	/**
 	 * html hlavicka
 	 *
@@ -96,7 +110,6 @@ class site{
 		$r.=_N_T.'<meta http-equiv="imagetoolbar" content="no" />';
 		$r.=_N_T.'<meta http-equiv="cache-control" content="cache" />';
 		$r.=($this->title ? _N_T.'<title>'.$this->title.'</title>' : false);
-		$r.=_N_T.'<link rel="stylesheet" type="text/css" href="../core/style/style.css" title="style" media="screen" />';
 		if(!empty($this->header)){
 			$r.=_N_T.implode(_N_T,$this->header);
 		}
